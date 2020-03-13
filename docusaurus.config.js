@@ -21,6 +21,7 @@ module.exports = {
         },
         {to: 'blog', label: 'Blog', position: 'left'},
         {href: "https://wiznet.io", label: 'Where to Buy', position: 'left'},
+        {href: "https://github.com/wizfi/Release/tree/master/Binary", label: 'Download Firmware', position: 'left'},
         {
           href: 'https://github.com/wizfi/Document',
           label: 'GitHub',
