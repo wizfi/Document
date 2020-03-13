@@ -1,11 +1,11 @@
 module.exports = {
   title: 'My Site',
   tagline: 'The tagline of my site',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  url: 'https://wizfi.github.io',
+  baseUrl: '/Document/',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'wizfi', // Usually your GitHub org/user name.
+  projectName: 'Document', // Usually your repo name.
   themeConfig: {
     navbar: {
       title: 'My Site',
