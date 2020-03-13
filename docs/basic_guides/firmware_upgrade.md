@@ -11,7 +11,7 @@ sidebar_label: How to upgrade firmware
 ### Required hardware and software
 
 - WizFi360-EVB
-- Tera Tern
+- Tera Term
 - USB cable or TTL-to-USB module
 - WizFi360 Firmware .img file
 

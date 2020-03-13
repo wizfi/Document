@@ -41,7 +41,7 @@ module.exports = {
             },
             {
               label: 'Application guides',
-              to: 'docs/doc2',
+              to: 'docs/basic_guides/firmware_upgrade',
             },
           ],
         },

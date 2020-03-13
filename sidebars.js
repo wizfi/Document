@@ -17,7 +17,7 @@ module.exports = {
 module.exports = {
   docs: {
     WizFi360: [
-      'intro', 'resources'
+      'intro', 'resources','wizfi360_shield','wizfi360_mini','wizfi360io'
     ],
     'Application Guides': [
       {

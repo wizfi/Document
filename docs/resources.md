@@ -213,3 +213,11 @@ TCP/UDP/SSL connection result and AT command used example.
 | V1.0.2  | OCT2019 | Modified Overview description |
 
 </details>
+
+## Hardware Design Guide
+
+[Hardware Design Guide](https://wizwiki.net/wiki/lib/exe/fetch.php/products:wizfi360:wizfi360ds:wizfi360_hardware_design_guide_v103_en.pdf)
+
+| Version | Date    | Decription                    |
+| ------- | ------- | ----------------------------- |
+| V1.0.3  | NOV2019 | Initial Release               |
