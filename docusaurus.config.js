@@ -1,6 +1,6 @@
 module.exports = {
-  title: 'My Site',
-  tagline: 'The tagline of my site',
+  title: 'WizFi360',
+  tagline: 'Designed for applications from IoT projects to industrial & smart devices',
   url: 'https://wizfi.github.io',
   baseUrl: '/Document/',
   favicon: 'img/favicon.ico',
@@ -8,21 +8,21 @@ module.exports = {
   projectName: 'Document', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'My Site',
+      title: 'WizFi360',
       logo: {
         alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        src: 'img/wiznet_logo_110x37.png',
       },
       links: [
         {
-          to: 'docs/doc1',
-          activeBasePath: 'docs',
+          to: 'docs/intro',
           label: 'Docs',
           position: 'left',
         },
         {to: 'blog', label: 'Blog', position: 'left'},
+        {href: "https://wiznet.io", label: 'Where to Buy', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/wizfi/Document',
           label: 'GitHub',
           position: 'right',
         },
@@ -35,11 +35,11 @@ module.exports = {
           title: 'Docs',
           items: [
             {
-              label: 'Style Guide',
-              to: 'docs/doc1',
+              label: 'Getting Started',
+              to: 'docs/intro',
             },
             {
-              label: 'Second Doc',
+              label: 'Application guides',
               to: 'docs/doc2',
             },
           ],
@@ -48,34 +48,30 @@ module.exports = {
           title: 'Community',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+              label: 'WIZnet Forum',
+              href: 'https://forum.wiznet.io',
             },
             {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              label: 'WIZnet Maker',
+              href: 'http://maker.wiznet.io/',
             },
           ],
         },
         {
-          title: 'Social',
+          title: 'Family Site',
           items: [
             {
               label: 'Blog',
               to: 'blog',
             },
             {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              label: 'WIZnet',
+              href: 'https://wiznet.io',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} WIZnet Co., Ltd. All Rights Reserved.`,
     },
   },
   presets: [
