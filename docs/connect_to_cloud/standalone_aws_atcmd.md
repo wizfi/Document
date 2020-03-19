@@ -22,6 +22,11 @@ sidebar_label: Standalone AT Cmd
 - [**Sign to console**][Link-AWS-Console]
 - [**Create a thing**][Link-create-thing]
 - [**Create certificate**][Link-create-certi]
+:::important
+ Save certificates and key during creation.
+![](/Document/img/aws_cloud/sdk-attach-policy.png)
+AWS root CA can be downloaded from [**here**][link-aws-ca]
+:::
 - [**Create a policy**][Link-create-policy]
 - [**Attach policy to certificate**][Link-attach-policy]
 - [**Attach certificate to a thing**][Link-attach-certi]
@@ -37,7 +42,7 @@ In this document we will provide guide how to connect to AWS services.
 Process consists of following steps:
 - Creation of AWS account
 - Creation & configuration of Thing in IoT Core
-- Connection & Message tranfer
+- Connection & Message transfer
 
 For this guide we used evaluation board [WizFi360-EVB-Shield]
 
@@ -158,6 +163,26 @@ AT+CWJAP_CUR="ssid","password"
 // Query WizFi360 IP address
 AT+CIPSTA_CUR? 
 ````
+
+### Enter Certificate 
+
+````cpp
+//Enter AWS Root CA
+AT+CASEND=1
+
+//Enter Private key
+AT+AWSPKSEND=1
+
+//Enter Client ceritificate
+AT+CLICASEND=1
+
+````
+When saving certificate or private key, all lines shall be sent one by one from "Begin certificate" line till "End certificate" line.
+
+Please refer to below image.
+![](/Document/img/aws_cloud/terminal_ca_send.gif)
+
+
 ### Connection to AWS
 
 ````cpp
@@ -192,13 +217,17 @@ Below is screenshot from terminal
 
 ![](/Document/img/aws_cloud/token2shell.PNG)
 
-### Results
+## Results
 
 1. Results can be checked in AWS -> AWS IoT -> Manage -> Things -> Shadow.
 2. Since we subscribed to "updated" topic, when MQTT message is sent we can see reply message instantly.
 
 ![](/Document/img/aws_cloud/aws_shadow.PNG)
 
+
+**Congratulations**
+
+WizFi360 is successfully connected to AWS!
 
 [Link-AWS-Console]: https://aws.amazon.com/ko/console/
 [Link-create-thing]: https://docs.aws.amazon.com/iot/latest/developerguide/create-aws-thing.html
@@ -209,3 +238,5 @@ Below is screenshot from terminal
 [WizFi360]: https://wizwiki.net/wiki/doku.php/products:wizfi360:start
 [WizFi360-EVB-Shield]: https://wizwiki.net/wiki/doku.php/products:wizfi360:board:wizfi360-evb:start
 [Silicon Labs CP210x USB to UART Driver]: https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers
+[AT Instruction Set]: https://wizwiki.net/wiki/lib/exe/fetch.php/products:wizfi360:wizfi360ds:wizfi360_atset_v107.2e.pdf
+[link-aws-ca]: https://docs.aws.amazon.com/iot/latest/developerguide/server-authentication.html#server-authentication-certs
