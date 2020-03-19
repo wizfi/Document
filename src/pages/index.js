@@ -12,8 +12,7 @@ const features = [
     imageUrl: 'img/easy_to_use.JPG',
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        WizFi360 is fast & simple plug-and-play module for the addition of wireless capabilities.
       </>
     ),
   },
@@ -22,8 +21,7 @@ const features = [
     imageUrl: 'img/img_sdk.png',
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+        To minimize customers' burden we provide software customization services, like AT command customization.
       </>
     ),
   },
@@ -32,8 +30,7 @@ const features = [
     imageUrl: 'img/img_hdk.png',
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Need more pins or different dimensions? Let us know, we will modify our module according to your project requirements.
       </>
     ),
   },
