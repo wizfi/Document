@@ -47,7 +47,7 @@ module.exports = {
           {
             type: 'category', 
             label: 'AWS', 
-            items:['doc3']
+            items:['connect_to_cloud/standalone_aws_atcmd']
           },
           
         ],
