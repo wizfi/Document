@@ -7,17 +7,18 @@ module.exports = {
   organizationName: 'wizfi', // Usually your GitHub org/user name.
   projectName: 'Document', // Usually your repo name.
   themeConfig: {
+    algolia: {
+      apiKey: '07f8cbc0d0a5ef7b848bfcf27fc1197f',
+      indexName: 'wizfi',
+      algoliaOptions: {}, // Optional, if provided by Algolia
+    },
     navbar: {
       title: 'WizFi360',
       logo: {
         alt: 'My Site Logo',
         src: 'img/wiznet_logo_110x37.png',
       },
-      algolia: {
-        apiKey: '07f8cbc0d0a5ef7b848bfcf27fc1197f',
-        indexName: 'wizfi',
-        algoliaOptions: {}, // Optional, if provided by Algolia
-      },
+      
       links: [
         {
           to: 'docs/intro',
