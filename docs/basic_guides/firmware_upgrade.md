@@ -1,7 +1,7 @@
 ---
 id: firmware_upgrade
 title: Firmware Upgrade Guide
-sidebar_label: How to upgrade firmware
+sidebar_label: Firmware Upgrade
 ---
 
 # There are three methods to update firmware: Tera Term(Serial Program), Cloud or Upgrade Tool.

@@ -24,9 +24,11 @@ module.exports = {
         type: 'category',
         label: 'Basic Guides',
         items: [
+          'basic_guides/quickstart',
           'basic_guides/firmware_upgrade',
           'basic_guides/spi_guide',
-          'basic_guides/mqtt_client'
+          'basic_guides/mqtt_client',
+          'basic_guides/hardware_design'
         ]
       },
       {

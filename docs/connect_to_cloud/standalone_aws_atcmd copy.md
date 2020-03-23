@@ -15,6 +15,7 @@ sidebar_label: Standalone AT Cmd (한국어)
 
 -   Preferred Serial Terminal (TeraTerm, YAT, etc.)
 -   AWS Console account
+-   본 문서에서는 Firmware v.1.1.0.595사용되었습니다. Firmware 받으실려면 문의해주시기 바랍니다.
 
 <details open>
 <summary> 시작하기전에 AWS IoT Core 준비할것</summary>

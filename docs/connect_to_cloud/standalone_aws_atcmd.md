@@ -15,6 +15,7 @@ sidebar_label: Standalone AT Cmd
 
 -   Preferred Serial Terminal (TeraTerm, YAT, etc.)
 -   AWS Console account
+-   Firmware v. 1.1.0.595 was used in this guide. Please contact us to receive this version.
 
 <details open>
 <summary> AWS IoT Core preparation before start</summary>
