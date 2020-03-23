@@ -25,6 +25,7 @@ jobs:
     - name: Installation
       run: yarn
     - name: Docusaurus 2 Build
-      run: GIT_USER=ViktorWiz yarn deploy
+      uses: GITHUB_ACTOR
+      run: yarn deploy
       env:
         CI: true
