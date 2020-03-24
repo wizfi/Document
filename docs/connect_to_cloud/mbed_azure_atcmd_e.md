@@ -1,30 +1,30 @@
 ---
-id: arduino_atcmd
-title: Arduino Mega 2560 + WizFi360 Azure AT Command를 이용하여 Azure IoT Hub에 연결
-sidebar_label: Arduino AT Cmd (한국어)
+id: mbed_atcmd
+title: NUCLEO-L476RG + WizFi360 Azure AT Command를 이용하여 Azure IoT Hub에 연결
+sidebar_label: Mbed AT Cmd
 ---
 
 ## 시작하기 전에
 
 ### Hardware Requirement
--   Arduino Mega 2560 board
+-   [NUCLEO-L476RG][Link-Nucleo-L476rg]
 -   Desktop or laptop computer
 -   USB 케이블
 -   WizFi360-EVB-Shield
 
 ### Software Requirement
 
-- MS Azure Account (Azure 구독이 아직 없는 경우 체험 무료[계정]을 만듭니다.)
+- Microsoft Azure Account (Azure 구독이 아직 없는 경우 체험 무료[계정]을 만듭니다.)
 - Preferred Serial Terminal (TeraTerm, YAT, etc.)
 - [Azure IoT Explorer]
-- Arduino IDE
+- MBED Studio / MBED Online Compiler
 
 ## 소개
 
 Microsoft Azure 는 Microsoft 의 클라우드 컴퓨팅 서비스입니다.
 Microsoft Azure 의 서비스에 [WizFi360] 을 연동하여 데이터를 클라우드로 전송하고, 모니터링 할 수 있습니다.
 
-본 문서에서는 Arduino Mega 2560 + WizFi360 이용하여 MS Azure Services에 연결 방법에 대한 가이드를 제공합니다.
+본 문서에서는 NUCLEO-L476G + WizFi360 이용하여 MS Azure Services에 연결 방법에 대한 가이드를 제공합니다.
 이 프로세스는 다음 단계로 구성됩니다.
 - Azure IoT Hub 준비
 - IoT 디바이스 등록
@@ -40,22 +40,31 @@ WiFi모듈 테스트를 위해 [WizFi360-EVB-Shield] Evaluation 보드를 사용
 
 ### 하드웨어 설정
 
-이 문서에서는 Arduino Mega2560 과 WizFi360-EVB-Shield 를 사용합니다. Arduino Code 에서 UART1 을 사용하여 WizFi360-EVB-Shield 와 통신하기 위해, Arduino 의 TX1, RX1 Pin 과 WizFi360-EVB-Shield 의 RXD, TXD pin 을 연결합니다. WizFi360-EVB-Shield 에서 RXD/TXD Selector 를 OFF 로 변경하여 USB 가 아닌 Pin 을 통해 UART 통신을 하도록 합니다.
+WizFi360-EVB-Shield는 NUCLEO-L476RG와 결합을 하여 사용되어 집니다. 따라서 WizFi360-EVB-Shield의 DIP Switch 및 UART Jumper Pin을 다음과 같이 설정이 필요합니다.
 
-![](/Document/img/azure_cloud/Arduino_Azure_atcmd_wizfi360_connection_new.png)
+> * SW1 : Off
+> * SW2 : Off
+> * SW3 : On
+> * D2 : UART Tx
+> * D8 : UART Rx
 
-WizFi360-EVB-Shield에 있는 DHT11 센서 사용을 위해 Arduino Mega D14 pin과 EVB D14 pin 연결해야 됩니다.
+![](/Document/img/azure_cloud/mqtt_atcmd_wizfi360_required_item_2.png)
+
+
 
 ### 디바이스 연결
-하드웨어 설정 후 USB 커넥터를 이용하여 Arduino Mega2560 Rev3 보드와 PC를 연결합니다. PC 운영체제 장치 관리자에서 장치와 연결된 COM 포트를 확인할 수 있습니다.
 
+Hardware 설정 후, Mini USB Cable을 이용하여 NUCLEO-L476RG를 Desktop 혹은 Laptop Computer와 연결을 합니다.
 
-![](/Document/img/azure_cloud/Arduino_Azure_atcmd_device_manager_port.png)
+**장치 관리자**에서 NUCLEO-L476RG와 연결된 **COM Port**를 확인 할 수 있습니다.
 
-> Arduino IDE를 정상적으로 설치하면, 위와 같이 장치 관리자에서 COM 포트를 확인할 수 있습니다.
+![][Link-Device-Management]
+
+> 장치 관리자에서 COM Port를 확인 할 수 없는 경우, 다음 Link에서 Driver를 Downlonad하여 설치하시기 바랍니다.
+>
+> * [ST-LINK, ST-LINK/V2, ST-LINK/V2-1 USB driver][Link-St_Link_St_Link_V2_St_Link_V2_1_Usb_Driver]
 
 ## AT 명령어
-
 
 ### 1. Set current WiFi mode (not saved in flash)
 
@@ -95,7 +104,6 @@ Defined values:
 | 3 | SoftAP DHCP 와 Station DHCP 를 enable 한다. (factory default)|
 
 ### 3. List available APs
-
 **AT Command:** AT+CWLAP
 Syntax:
 
@@ -202,41 +210,40 @@ Syntax:
 
 ## 동작 예제
 
-### Arduino 예제 코드 다운로드
-다음 링크에서 Arduino 예제 코드를 다운로드한 후, ino 확장자의 프로젝트 파일을 실행 시킵니다.
+### Mbed 예제 코드 다운로드
+**예제 Download**를 한 후, **File** > **Open Workspace**을 선택하여 **Project 실행**합니다.
 
 > 예제는 다음 경로에 위치하고 있는 Project를 참고 바랍니다.
 >
-> **samples/Wi-Fi/Arduino_Azure_Atcmd_Wizfi360**
+> **samples/Wi-Fi/Mbed_Azure_Atcmd_Wizfi360**
+
+![][Link-Execute_Project_Through_Mbed_Studio_1]
+
+Online Compiler 경우 다음 링크에서 Compiler에 import을 할 수 있습니다.
+> https://os.mbed.com/users/vikshin/code/Mbed-Azure-Atcmd-WizFi360/
+![](/Document/img/azure_cloud/Mbed_Azure_online_compiler.JPG)
 
 ### Modify parameters
 
-Azure IoT Hub 연결 위한 WiFi ssid, WiFi pwd, Hub ID, Device ID, Device Key 변경하여 테스트 해볼 수 있습니다.
+Azure IoT Hub 연결 위한 WiFi ssid, WiFi password, Hub ID, Device ID, Device Key 변경하여 테스트 해볼 수 있습니다.
 ````cpp
-//WiFi credentials
-char ssid[] = "XXXXXXXXXXXXXXXXXX";    // your network SSID (name)
-char pass[] = "XXXXXXXXXXXXXXXXXX";        // your network password
+/* WiFi info */
+char ssid[] = "XXXXXXXXXXXXXXXXXXXXXXXX";
+char password[] = "XXXXXXXXXXXXXXXXXXXXXXXXXX";
 
-//Azure Hub & Device credentials
-char IotHubname[] = "XXXXXXXXXXXXXXX";
-char DeviceId[] = "XXXXXXXXXXXXX";
-char DevicePrimaryKey[] = "XXXXXXXXXXXXXXXXXX";
+/* Azure info */
+char hub_name[] = "XXXXXXXXXXXXXXXXXXXXXXXXXX";
+char device_id[] = "XXXXXXXXXXXXXXXXXXXXXXXXXX";
+char device_primary_key[] = "XXXXXXXXXXXXXXXXXXXXXXXXXX=";
 ````
 
 
-다음 그림과 같이 Arduino Mega2560 보드와 포트를 선택하고, 컴파일을 수행합니다.
+**Run Program**을 눌러 Project Build 및 Run을 합니다.
 
-![](/Document/img/azure_cloud/Arduino_Azure_atcmd_ide_port_check.png)
+![][Link-Execute_Project_Through_Mbed_Studio_3]
 
-![](/Document/img/azure_cloud/Arduino_Azure_atcmd_ide_board_check.png)
-
-컴파일이 완료 되면 다음과 같이 업로드를 수행하여 최종적으로 보드에 업로드를 수행 합니다. 업로드가 정상적으로 완료되면 'avrdude done. Thank you.' 메시지를 확인 할 수 있습니다. 
-
-![](/Document/img/azure_cloud/Arduino_Azure_atcmd_ide_upload.png)
-
-업로드를 완료한 후, 시리얼 모니터를 이용하여 정상적으로 Arduino Mega2560 보드에 업로드 되었는지 확인할 수 있습니다.
-
-![](/Document/img/azure_cloud/Arduino_Azure_atcmd_serial_monitor_results.JPG)
+업로드를 완료한 후, 시리얼 모니터를 이용하여 정상적으로 Nucleo 보드에 업로드 되었는지 확인할 수 있습니다.
+![](/Document/img/azure_cloud/Mbed_Azure_atcmd_serial_monitor.JPG)
 
 
 ### 동작 예제 결과
@@ -245,11 +252,11 @@ char DevicePrimaryKey[] = "XXXXXXXXXXXXXXXXXX";
 > MQTTPUB 명령을 통해 메시지를 보내기 전에 "Start" 버튼을 눌러야 합니다.
 2. MQTTPUB command으로 수신한 데이터를 확인 할 수 있습니다.
 
-![](/Document/img/azure_cloud/Arduino_Azure_atcmd_IoT_Explorer_results.JPG)
+![](/Document/img/azure_cloud/Mbed_Azure_atcmd_iot_explorer.JPG)
 
-## 다음 단계
+## 더 보기
 
-
+[WizFi360 Azure AT Command를 이용하여 Azure IoT Hub에 연결]
 
 
 [계정]: https://azure.microsoft.com/ko-kr/free/
@@ -260,3 +267,8 @@ char DevicePrimaryKey[] = "XXXXXXXXXXXXXXXXXX";
 [Silicon Labs CP210x USB to UART Driver]: https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers
 [Communicate with your IoT hub using the MQTT protocol: Using the MQTT protocol directly (as a device)]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-mqtt-support
 [Azure Cloud 소개]: https://github.com/Wiznet/azure-iot-kr/tree/master/docs/Azure_Cloud
+[Link-Nucleo-L476rg]:https://os.mbed.com/platforms/ST-Nucleo-L476RG/
+[Link-Device-Management]: /Document/img/azure_cloud/device_management_2.png
+[Link-Execute_Project_Through_Mbed_Studio_1]: /Document/img/azure_cloud/execute_project_through_mbed_studio_1.png
+[Link-Execute_Project_Through_Mbed_Studio_3]: /Document/img/azure_cloud/execute_project_through_mbed_studio_3.png
+[WizFi360 Azure AT Command를 이용하여 Azure IoT Hub에 연결]: https://github.com/Wiznet/azure-iot-kr/blob/master/docs/IoT_device/Connectivities/Wi-Fi/standalone_azure_atcmd_wizfi360.md

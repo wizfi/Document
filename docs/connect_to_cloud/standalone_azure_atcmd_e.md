@@ -1,30 +1,40 @@
 ---
-id: arduino_atcmd
-title: Arduino Mega 2560 + WizFi360 Azure AT Command를 이용하여 Azure IoT Hub에 연결
-sidebar_label: Arduino AT Cmd (한국어)
+id: standalone_atcmd
+title: WizFi360 Azure AT Command를 이용하여 Azure IoT Hub에 연결
+sidebar_label: Standalone AT Cmd
 ---
 
 ## 시작하기 전에
 
 ### Hardware Requirement
--   Arduino Mega 2560 board
 -   Desktop or laptop computer
--   USB 케이블
+-   MicroUSB 케이블
 -   WizFi360-EVB-Shield
 
 ### Software Requirement
 
-- MS Azure Account (Azure 구독이 아직 없는 경우 체험 무료[계정]을 만듭니다.)
-- Preferred Serial Terminal (TeraTerm, YAT, etc.)
-- [Azure IoT Explorer]
-- Arduino IDE
+-   Preferred Serial Terminal (TeraTerm, YAT, etc.)
+-   [Azure IoT Explorer]
+
+> [**Azure Portal**][Link-Azure-Portal]에 Login을 합니다. 계정이 없는 경우, 계정 생성 후에 Login을 진행합니다.
+>
+> ※ 본 문서는 [**체험 계정**][Link-Azure-Account-Free]으로 진행합니다.
+>
+> Azure Portal을 사용하여 IoT Hub 만들기 등 앞선 일련의 과정에 대하여 [Azure Cloud 소개][Link-Azure_Cloud_Introduction]를 참조하시기 바랍니다.
+>
+> * [Azure Portal을 사용하여 IoT Hub 만들기][Link-Create_IoT_Hub_Through_Azure_Portal]
+>
+> * [Azure Portal을 사용하여 Blob Storage 만들기][Link-Create_Blob_Storage_Through_Azure_Portal]
+>
+> * [Azure Portal을 사용하여 Stream Analytics 만들기][Link-Create_Stream_Analytics_Through_Azure_Portal]
+>
+> * [Azure Portal을 사용하여 Stream Analytics 작업 입 · 출력 구성 및 변환 Query 정의][Link-Configure_Stream_Analytics_Job_Input_Output_And_Define_The_Transformation_Query_Through_Azure_Portal]
 
 ## 소개
-
 Microsoft Azure 는 Microsoft 의 클라우드 컴퓨팅 서비스입니다.
 Microsoft Azure 의 서비스에 [WizFi360] 을 연동하여 데이터를 클라우드로 전송하고, 모니터링 할 수 있습니다.
 
-본 문서에서는 Arduino Mega 2560 + WizFi360 이용하여 MS Azure Services에 연결 방법에 대한 가이드를 제공합니다.
+본 문서에서는 WizFi360 이용하여 MS Azure Services에 연결 방법에 대한 가이드를 제공합니다.
 이 프로세스는 다음 단계로 구성됩니다.
 - Azure IoT Hub 준비
 - IoT 디바이스 등록
@@ -40,25 +50,23 @@ WiFi모듈 테스트를 위해 [WizFi360-EVB-Shield] Evaluation 보드를 사용
 
 ### 하드웨어 설정
 
-이 문서에서는 Arduino Mega2560 과 WizFi360-EVB-Shield 를 사용합니다. Arduino Code 에서 UART1 을 사용하여 WizFi360-EVB-Shield 와 통신하기 위해, Arduino 의 TX1, RX1 Pin 과 WizFi360-EVB-Shield 의 RXD, TXD pin 을 연결합니다. WizFi360-EVB-Shield 에서 RXD/TXD Selector 를 OFF 로 변경하여 USB 가 아닌 Pin 을 통해 UART 통신을 하도록 합니다.
-
-![](/Document/img/azure_cloud/Arduino_Azure_atcmd_wizfi360_connection_new.png)
-
-WizFi360-EVB-Shield에 있는 DHT11 센서 사용을 위해 Arduino Mega D14 pin과 EVB D14 pin 연결해야 됩니다.
+본 문서에서 WizFi360-EVB-Shield가 standalone mode에서 사용됩니다. 따라서 UART를 위해 MicroUSB를 사용할겁니다.
+MicroUSB 사용하는경우 SW1을 ON 시키고 MicroUSB 연결해야됩니다.
+![](/Document/img/azure_cloud/WizFi360EVB_SW1.JPG)
 
 ### 디바이스 연결
-하드웨어 설정 후 USB 커넥터를 이용하여 Arduino Mega2560 Rev3 보드와 PC를 연결합니다. PC 운영체제 장치 관리자에서 장치와 연결된 COM 포트를 확인할 수 있습니다.
+하드웨어 설정 후 MicroUSB 이용하여 PC와 연결합니다. PC운영체제에서 보드와 연결된 COM 포트를 확인할 수 있습니다.
+> 윈도우 운영체제의 경우, 장치 관리자(Device Manager)에서 COM 포트를 확인할 수 있습니다.
+![](/Document/img/azure_cloud/DeviceManager.JPG)
 
+> 장치 관리자에서 COM 포트를 확인할 수 없는 경우, 다음 링크에서 드라이버를 다운로드하여 설치하시기 바랍니다.
+  - [Silicon Labs CP210x USB to UART Driver]
 
-![](/Document/img/azure_cloud/Arduino_Azure_atcmd_device_manager_port.png)
-
-> Arduino IDE를 정상적으로 설치하면, 위와 같이 장치 관리자에서 COM 포트를 확인할 수 있습니다.
 
 ## AT 명령어
 
 
 ### 1. Set current WiFi mode (not saved in flash)
-
 **AT Command:** AT+CWMODE_CUR
 Syntax:
 
@@ -76,7 +84,6 @@ Defined values:
 | 3 | Station+SoftAP mode|
 
 ### 2. Enable DHCP
-
 **AT Command:** AT+CWDHCP_CUR
 Syntax:
 
@@ -95,7 +102,6 @@ Defined values:
 | 3 | SoftAP DHCP 와 Station DHCP 를 enable 한다. (factory default)|
 
 ### 3. List available APs
-
 **AT Command:** AT+CWLAP
 Syntax:
 
@@ -202,56 +208,104 @@ Syntax:
 
 ## 동작 예제
 
-### Arduino 예제 코드 다운로드
-다음 링크에서 Arduino 예제 코드를 다운로드한 후, ino 확장자의 프로젝트 파일을 실행 시킵니다.
+### 시리얼 터미널 연결 및 실행
 
-> 예제는 다음 경로에 위치하고 있는 Project를 참고 바랍니다.
->
-> **samples/Wi-Fi/Arduino_Azure_Atcmd_Wizfi360**
+시리얼 터미널 프로그램을 실행하여 디바이스 연결 단계에서 확인한 보드의 COM 포트와 Baudrate 115200을 선택하여 시리얼 포트를 연결합니다.
+> 디버그 메시지 출력용 시리얼 포트 설정 정보: 115200-8-N-1, None.
 
-### Modify parameters
+### WizFi360모듈의 WiFi 설정
 
-Azure IoT Hub 연결 위한 WiFi ssid, WiFi pwd, Hub ID, Device ID, Device Key 변경하여 테스트 해볼 수 있습니다.
-````cpp
-//WiFi credentials
-char ssid[] = "XXXXXXXXXXXXXXXXXX";    // your network SSID (name)
-char pass[] = "XXXXXXXXXXXXXXXXXX";        // your network password
+#### 1.  Set Wifi station mode
 
-//Azure Hub & Device credentials
-char IotHubname[] = "XXXXXXXXXXXXXXX";
-char DeviceId[] = "XXXXXXXXXXXXX";
-char DevicePrimaryKey[] = "XXXXXXXXXXXXXXXXXX";
-````
+| Command | Response |
+|:--------|:--------|
+| AT+CWMODE_CUR=1 // station mode | OK |
+
+#### 2.  Set DHCP Enable
+
+| Command | Response |
+|:--------|:--------|
+| AT+CWDHCP_CUR=1,1 // DHCP enable on Station mode | OK |
+
+#### 3.  Get possible Wi-Fi AP List for connection
+
+| Command | Response |
+|:--------|:--------|
+| AT+CWLAP  | +CWLAP : (3,"ssid",-57,"mac address",1,1) // encryption method, ssid, rssi, mac address, channel, wps |
+
+#### 4.  Connect to Wi-Fi AP
+
+| Command | Response |
+|:--------|:--------|
+| AT+CWJAP_CUR="ssid","password"  | WIFI CONNECTED <br /> WIFI GOT IP |
+
+#### 5.  Query WizFi360 device' IP address
+
+| Command | Response |
+|:--------|:--------|
+| AT+CIPSTA_CUR?  | +CIPSTA_CUR:ip:”192.168.10.13” <br /> +CIPSTA_CUR:gateway:”192.168.10.1” <br /> +CIPSTA_CUR:network:”255.255.255.0” |
+
+### 다음 AT 명령을 실행하여 Azure 서비스에 연결
+
+#### 1.  Set Azure connection
 
 
-다음 그림과 같이 Arduino Mega2560 보드와 포트를 선택하고, 컴파일을 수행합니다.
+| Command | Response |
+|:--------|:--------|
+| AT+AZSET="iothub_name","device_id","device_key" | OK |
 
-![](/Document/img/azure_cloud/Arduino_Azure_atcmd_ide_port_check.png)
+#### 2. Set MQTT Topic
 
-![](/Document/img/azure_cloud/Arduino_Azure_atcmd_ide_board_check.png)
+| Command | Response |
+|:--------|:--------|
+| AT+MQTTTOPIC="/devices/{device_id}/messages/events/","/devices/{device_id}/messages/devicebound/#"<br /><br />Example<br /> AT+MQTTTOPIC="/devices/testDevice/messages/events/","/devices/testDevice/messages/devicebound/#"| OK |
 
-컴파일이 완료 되면 다음과 같이 업로드를 수행하여 최종적으로 보드에 업로드를 수행 합니다. 업로드가 정상적으로 완료되면 'avrdude done. Thank you.' 메시지를 확인 할 수 있습니다. 
+> Note: 
+> MQTT Topic follows the rules defined in Azure IoT Hub. 
+> Refer to document: [Communicate with your IoT hub using the MQTT protocol: Using the MQTT protocol directly (as a device)]
 
-![](/Document/img/azure_cloud/Arduino_Azure_atcmd_ide_upload.png)
+##### 3. Connect to Azure
 
-업로드를 완료한 후, 시리얼 모니터를 이용하여 정상적으로 Arduino Mega2560 보드에 업로드 되었는지 확인할 수 있습니다.
+| Command | Response |
+|:--------|:--------|
+| AT+AZCON | OK |
 
-![](/Document/img/azure_cloud/Arduino_Azure_atcmd_serial_monitor_results.JPG)
+##### 4. Publish data
 
+| Command | Response |
+|:--------|:--------|
+| AT+MQTTPUB="{"deviceId":"WizFi360","temperature":28.16,"humidity":46.04}" | OK |
+
+![](/Document/img/azure_cloud/Token2Shell.jpg)
 
 ### 동작 예제 결과
 
 1. IoT Explorer 에서 Telemetry Section안에 "Start" 버튼을 누릅니다.
 > MQTTPUB 명령을 통해 메시지를 보내기 전에 "Start" 버튼을 눌러야 합니다.
-2. MQTTPUB command으로 수신한 데이터를 확인 할 수 있습니다.
+2. 터미널에서 MQTTPUB command으로 수신한 데이터를 확인 할 수 있습니다.
 
-![](/Document/img/azure_cloud/Arduino_Azure_atcmd_IoT_Explorer_results.JPG)
+![](/Document/img/azure_cloud/azure_iot_explorer.png)
 
 ## 다음 단계
 
+1. [Azure Portal을 사용하여 Stream Analytics 작업 입 · 출력 구성 및 변환 Query 정의][Link-Configure_Stream_Analytics_Job_Input_Output_And_Define_The_Transformation_Query_Through_Azure_Portal]
+
+2. WizFi360 Azure AT Command를 이용한 Azure IoT Hub 연동 예제
+
+	* [Mbed Example]
+
+	* [Arduino Example]
 
 
 
+[Link-Azure-Portal]: https://portal.azure.com/
+[Link-Azure-Account-Free]: https://azure.microsoft.com/ko-kr/free/
+[Link-Data_Communication_Structure]: https://github.com/Wiznet/azure-iot-kr/blob/master/Document/img/azure_cloud/standalone_mqtt_atcmd_wizfi360_data_communication_structure.png
+[Link-Azure_Cloud_Introduction]: https://github.com/Wiznet/azure-iot-kr/tree/master/docs/Azure_Cloud
+[Link-Create_IoT_Hub_Through_Azure_Portal]: https://docs.microsoft.com/ko-kr/azure/iot-hub/iot-hub-create-through-portal
+[Link-Create_Blob_Storage_Through_Azure_Portal]: https://github.com/Wiznet/azure-iot-kr/blob/master/docs/Azure_Cloud/create_blob_storage_through_azure_portal.md
+[Link-Create_Stream_Analytics_Through_Azure_Portal]: https://github.com/Wiznet/azure-iot-kr/blob/master/docs/Azure_Cloud/create_stream_analytics_through_azure_portal.md
+[Link-Configure_Stream_Analytics_Job_Input_Output_And_Define_The_Transformation_Query_Through_Azure_Portal]: https://github.com/Wiznet/azure-iot-kr/blob/master/docs/Azure_Cloud/configure_stream_analytics_job_input_output_and_define_the_transformation_query_through_azure_portal.md
 [계정]: https://azure.microsoft.com/ko-kr/free/
 [Azure Portal]: https://portal.azure.com/
 [WizFi360]: https://wizwiki.net/wiki/doku.php/products:wizfi360:start
@@ -260,3 +314,5 @@ char DevicePrimaryKey[] = "XXXXXXXXXXXXXXXXXX";
 [Silicon Labs CP210x USB to UART Driver]: https://www.silabs.com/products/development-tools/software/usb-to-uart-bridge-vcp-drivers
 [Communicate with your IoT hub using the MQTT protocol: Using the MQTT protocol directly (as a device)]: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-mqtt-support
 [Azure Cloud 소개]: https://github.com/Wiznet/azure-iot-kr/tree/master/docs/Azure_Cloud
+[Arduino Example]: https://github.com/Wiznet/azure-iot-kr/blob/master/docs/IoT_device/Connectivities/Wi-Fi/arduino_azure_atcmd_wizfi360.md
+[Mbed Example]: https://github.com/Wiznet/azure-iot-kr/blob/master/docs/IoT_device/Connectivities/Wi-Fi/mbed_azure_atcmd_wizfi360.md

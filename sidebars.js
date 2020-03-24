@@ -41,12 +41,13 @@ module.exports = {
         items: [ 
           {
             type: 'category', 
-            label: 'MS AZure', 
+            label: 'MS Azure', 
             items:['connect_to_cloud/standalone_mqtt',
               'connect_to_cloud/standalone_atcmd',
               'connect_to_cloud/mbed_mqtt',
               'connect_to_cloud/mbed_atcmd',
               'connect_to_cloud/arduino_atcmd',
+              'connect_to_cloud/arduino_atcmd_e',
               'connect_to_cloud/arduino_mqtt'
             ]
           },
