@@ -28,7 +28,11 @@ module.exports = {
           'basic_guides/firmware_upgrade',
           'basic_guides/spi_guide',
           'basic_guides/mqtt_client',
-          'basic_guides/hardware_design'
+          'basic_guides/hardware_design',
+          'basic_guides/http_client',
+          'basic_guides/http_server',
+          'basic_guides/throughput',
+          'basic_guides/w600sdk'
         ]
       },
       {
