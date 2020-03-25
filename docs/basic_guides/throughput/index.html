@@ -16,25 +16,25 @@
 <link rel="stylesheet" href="/Document/styles.87bbe9e7.css">
 
 
-<link rel="preload" href="/Document/styles.c53fe309.js" as="script">
+<link rel="preload" href="/Document/styles.f6d22bd4.js" as="script">
 
-<link rel="preload" href="/Document/runtime~main.4c7e1207.js" as="script">
+<link rel="preload" href="/Document/runtime~main.d6427587.js" as="script">
 
-<link rel="preload" href="/Document/main.1a89b60b.js" as="script">
+<link rel="preload" href="/Document/main.5b972726.js" as="script">
 
-<link rel="preload" href="/Document/1.86bf5725.js" as="script">
+<link rel="preload" href="/Document/1.fe9562fd.js" as="script">
 
-<link rel="preload" href="/Document/2.a9dcc18a.js" as="script">
+<link rel="preload" href="/Document/2.2f501ce0.js" as="script">
 
-<link rel="preload" href="/Document/3.72296b10.js" as="script">
+<link rel="preload" href="/Document/3.91104605.js" as="script">
 
-<link rel="preload" href="/Document/1be78505.8ea1ecce.js" as="script">
+<link rel="preload" href="/Document/1be78505.42d7bfb8.js" as="script">
 
-<link rel="preload" href="/Document/2d31042b.a5f585d3.js" as="script">
+<link rel="preload" href="/Document/2d31042b.563b7ad5.js" as="script">
 
-<link rel="preload" href="/Document/17896441.c8f3e9e0.js" as="script">
+<link rel="preload" href="/Document/17896441.e762bab8.js" as="script">
 
-<link rel="preload" href="/Document/30ebd059.510b71c3.js" as="script">
+<link rel="preload" href="/Document/30ebd059.0747b249.js" as="script">
 
 </head>
 <body>
@@ -44,25 +44,25 @@
 When command mode uses, it sets the AT+CIPSENDBUF=2048 as maximum length of the data to be transmitted and it sends data of 2048 length. Repeat the previous operation.</p><p><img src="/Document/img/basic_guides/throughput/throughput_setup.png"></p><p><img src="/Document/img/basic_guides/throughput/throughput_setup_1.png"></p><p><img src="/Document/img/basic_guides/throughput/throughput_setup_2.png"></p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="serial-command-usage"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#serial-command-usage" title="Direct link to heading">#</a>Serial command usage</h2><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="station-mode"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#station-mode" title="Direct link to heading">#</a>Station Mode</h3><table><thead><tr><th align="left">AT Command</th><th align="left">Terminal</th></tr></thead><tbody><tr><td align="left">AT <br> AT+CWMODE_CUR=1 <br> AT+CWDHCP_CUR=1,1 <br>AT+CWLAP <br>AT+CWJAP_CUR=”wizms1”,”maker0701” <br>AT+CIPSTA_CUR?</td><td align="left"><img src="/Document/img/basic_guides/throughput/throughput_station_mode.png"></td></tr></tbody></table><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="uart-ctsrts-setting"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#uart-ctsrts-setting" title="Direct link to heading">#</a>UART CTS/RTS Setting</h3><table><thead><tr><th align="left">AT Command</th><th align="left">Terminal</th></tr></thead><tbody><tr><td align="left">AT+CWUART_CUR = 115200,8,1,0,1</td><td align="left"><img src="/Document/img/basic_guides/throughput/throughput_cts_rts.png"></td></tr></tbody></table><p>Terminal setting</p><table><thead><tr><th align="left">AT Command</th><th align="left">Terminal</th></tr></thead><tbody><tr><td align="left">1. Pressing Ctrl+Shift+S and Open the Terminal Settings window<br>2. You have to change the Hardware(RFR/CTS) in Flow Control</td><td align="left"><img src="/Document/img/basic_guides/throughput/throughput_cts_rts_1.png"></td></tr><tr><td align="left">3. If you can see under the terminal window that the CTS/DTR is green</td><td align="left"><img src="/Document/img/basic_guides/throughput/throughput_cts_rts_2.png"></td></tr></tbody></table><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="tcp-client-mode"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#tcp-client-mode" title="Direct link to heading">#</a>TCP Client Mode</h3><table><thead><tr><th align="left">AT Command</th><th align="left">Terminal</th></tr></thead><tbody><tr><td align="left">AT+CIPSTART=”TCP”,”192.168.100.27”,5001<br>AT+CIPMODE=1<br>AT+CIPSEND</td><td align="left"><img src="/Document/img/basic_guides/throughput/throughput_client_data.png"></td></tr></tbody></table><p>Terminal setting</p><table><thead><tr><th align="left">AT Command</th><th align="left">Terminal</th></tr></thead><tbody><tr><td align="left">1. When DTR is red, it sends the 1M.txt<br> 2. If you click the DTR, it changes the DTR is green and it is sending the data through Serial</td><td align="left"><img src="/Document/img/basic_guides/throughput/throughput_client_data_1.png"></td></tr></tbody></table><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="tcp-client--command-mode"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#tcp-client--command-mode" title="Direct link to heading">#</a>TCP Client / Command mode</h3><table><thead><tr><th align="left">AT Command</th><th align="left">Terminal</th></tr></thead><tbody><tr><td align="left">AT+CIPSTART=”TCP”,”192.168.100.27”,5001<br>AT+CIPMODE=0<br>AT+CIPSENDBUF=2048<br>Send the 2048byte data * 512times = 1Mbyte</td><td align="left"><img src="/Document/img/basic_guides/throughput/throughput_client_command.png"></td></tr></tbody></table><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="result-of-uart-throughput"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#result-of-uart-throughput" title="Direct link to heading">#</a>Result of UART Throughput</h2><p>PC sends the 1Mbyte through serial of WizFi360(UART1) and WizFi360 send the data to TCP Server.</p><p><img src="/Document/img/basic_guides/throughput/throughput_table.png"></p><p>We measured the time from the start of data transfer to the end of data transfer using the wireshark tool, see Appendix 1.</p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="appendix-1"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#appendix-1" title="Direct link to heading">#</a>Appendix 1</h2><table><thead><tr><th align="left">Item</th><th align="left">Detail</th></tr></thead><tbody><tr><td align="left">Baudrate</td><td align="left">115 200</td></tr><tr><td align="left">Data mode</td><td align="left"><img src="/Document/img/basic_guides/throughput/throughput_client_115200d.png"></td></tr><tr><td align="left">Command mode</td><td align="left"><img src="/Document/img/basic_guides/throughput/throughput_client_115200c.png"></td></tr><tr><td align="left">Baudrate</td><td align="left">921 600</td></tr><tr><td align="left">Data mode</td><td align="left"><img src="/Document/img/basic_guides/throughput/throughput_client_921600d.png"></td></tr><tr><td align="left">Command mode</td><td align="left"><img src="/Document/img/basic_guides/throughput/throughput_client_921600c.png"></td></tr><tr><td align="left">Baudrate</td><td align="left">1 000 000</td></tr><tr><td align="left">Data mode</td><td align="left"><img src="/Document/img/basic_guides/throughput/throughput_client_1000000d.png"></td></tr><tr><td align="left">Command mode</td><td align="left"><img src="/Document/img/basic_guides/throughput/throughput_client_1000000c.png"></td></tr><tr><td align="left">Baudrate</td><td align="left">1 250 000</td></tr><tr><td align="left">Data mode</td><td align="left"><img src="/Document/img/basic_guides/throughput/throughput_client_1250000d.png"></td></tr><tr><td align="left">Command mode</td><td align="left"><img src="/Document/img/basic_guides/throughput/throughput_client_1250000c.png"></td></tr><tr><td align="left">Baudrate</td><td align="left">1 500 000</td></tr><tr><td align="left">Data mode</td><td align="left"><img src="/Document/img/basic_guides/throughput/throughput_client_1500000d.png"></td></tr><tr><td align="left">Command mode</td><td align="left"><img src="/Document/img/basic_guides/throughput/throughput_client_1500000c.png"></td></tr><tr><td align="left">Baudrate</td><td align="left">2 000 000</td></tr><tr><td align="left">Data mode</td><td align="left"><img src="/Document/img/basic_guides/throughput/throughput_client_2000000d.png"></td></tr><tr><td align="left">Command mode</td><td align="left"><img src="/Document/img/basic_guides/throughput/throughput_client_2000000c.png"></td></tr></tbody></table></div></article><div class="margin-vert--xl"><div class="row"><div class="col"><a href="https://github.com/facebook/docusaurus/edit/master/website/docs/basic_guides/throughput.md" target="_blank" rel="noreferrer noopener"><svg fill="currentColor" height="1.2em" width="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 40 40" style="margin-right:0.3em;vertical-align:sub"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div></div></div><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/Document/docs/basic_guides/http_server"><h5 class="pagination-nav__link--sublabel">Previous</h5><h4 class="pagination-nav__link--label">« HTTP Server using WizFi360</h4></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/Document/docs/basic_guides/w600sdk"><h5 class="pagination-nav__link--sublabel">Next</h5><h4 class="pagination-nav__link--label">W600-SDK »</h4></a></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"><ul class="contents contents__left-border"><li><a href="#test-environment" class="contents__link">Test Environment</a></li><li><a href="#serial-command-usage" class="contents__link">Serial command usage</a><ul><li><a href="#station-mode" class="contents__link">Station Mode</a></li><li><a href="#uart-ctsrts-setting" class="contents__link">UART CTS/RTS Setting</a></li><li><a href="#tcp-client-mode" class="contents__link">TCP Client Mode</a></li><li><a href="#tcp-client--command-mode" class="contents__link">TCP Client / Command mode</a></li></ul></li><li><a href="#result-of-uart-throughput" class="contents__link">Result of UART Throughput</a></li><li><a href="#appendix-1" class="contents__link">Appendix 1</a></li></ul></div></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="row footer__links"><div class="col footer__col"><h4 class="footer__title">Docs</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" href="/Document/docs/intro">Getting Started</a></li><li class="footer__item"><a class="footer__link-item" href="/Document/docs/basic_guides/firmware_upgrade">Application guides</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Community</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" target="_blank" rel="noopener noreferrer" href="https://forum.wiznet.io">WIZnet Forum</a></li><li class="footer__item"><a class="footer__link-item" target="_blank" rel="noopener noreferrer" href="http://maker.wiznet.io/">WIZnet Maker</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Family Site</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" href="/Document/blog">Blog</a></li><li class="footer__item"><a class="footer__link-item" target="_blank" rel="noopener noreferrer" href="https://wiznet.io">WIZnet</a></li></ul></div></div><div class="text--center"><div>Copyright © 2020 WIZnet Co., Ltd. All Rights Reserved.</div></div></div></footer>
 </div>
 
-<script src="/Document/styles.c53fe309.js"></script>
+<script src="/Document/styles.f6d22bd4.js"></script>
 
-<script src="/Document/runtime~main.4c7e1207.js"></script>
+<script src="/Document/runtime~main.d6427587.js"></script>
 
-<script src="/Document/main.1a89b60b.js"></script>
+<script src="/Document/main.5b972726.js"></script>
 
-<script src="/Document/1.86bf5725.js"></script>
+<script src="/Document/1.fe9562fd.js"></script>
 
-<script src="/Document/2.a9dcc18a.js"></script>
+<script src="/Document/2.2f501ce0.js"></script>
 
-<script src="/Document/3.72296b10.js"></script>
+<script src="/Document/3.91104605.js"></script>
 
-<script src="/Document/1be78505.8ea1ecce.js"></script>
+<script src="/Document/1be78505.42d7bfb8.js"></script>
 
-<script src="/Document/2d31042b.a5f585d3.js"></script>
+<script src="/Document/2d31042b.563b7ad5.js"></script>
 
-<script src="/Document/17896441.c8f3e9e0.js"></script>
+<script src="/Document/17896441.e762bab8.js"></script>
 
-<script src="/Document/30ebd059.510b71c3.js"></script>
+<script src="/Document/30ebd059.0747b249.js"></script>
 
 
 </body>
