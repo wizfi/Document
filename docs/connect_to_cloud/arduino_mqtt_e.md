@@ -1,10 +1,10 @@
 ---
 id: arduino_mqtt
-title: WizFi360 MQTT AT Command를 이용한 Azure IoT Hub 연동 예제
+title: Connect to Azure IoT Hub using WizFi360 MQTT AT Command
 sidebar_label: Arduino MQTT
 ---
 
-## 시작하기 전에
+## Getting started
 
 > [**Azure Portal**][Link-Azure-Portal]에 Login을 합니다. 계정이 없는 경우, 계정 생성 후에 Login을 진행합니다.
 >
