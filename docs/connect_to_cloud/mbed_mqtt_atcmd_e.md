@@ -1,43 +1,39 @@
 ---
-id: mbed_mqtt
-title: WizFi360 MQTT AT Command를 이용한 Azure IoT Hub 연동 예제
+id: mbed_mqtt_e
+title: Connect to Azure IoT Hub using WizFi360 MQTT AT Command
 sidebar_label: Mbed MQTT Cmd
 ---
 
-## 시작하기 전에
+## Getting started
 
-> [**Azure Portal**][Link-Azure-Portal]에 Login을 합니다. 계정이 없는 경우, 계정 생성 후에 Login을 진행합니다.
+> Login to [**Azure Portal**][Link-Azure-Portal].
 >
-> ※ 본 문서는 [**체험 계정**][Link-Azure-Account-Free]으로 진행합니다.
+> ※ In this guide we will procedd with [**free account**][Link-Azure-Account-Free].
+> To learn how to create IoT Hub please refer to [Azure Cloud Service Introduction][Link-Azure_Cloud_Introduction].
 >
-> Azure Portal을 사용하여 IoT Hub 만들기 등 앞선 일련의 과정에 대하여 [Azure Cloud 서비스 소개][Link-Azure_Cloud_Introduction]를 참조하시기 바랍니다.
->
-> * [[MS] Azure Portal을 사용하여 IoT Hub 만들기][Link-Create_IoT_Hub_Through_Azure_Portal]
-> * [Azure Portal을 사용하여 Blob Storage 만들기][Link-Create_Blob_Storage_Through_Azure_Portal]
-> * [Azure Portal을 사용하여 Stream Analytics 만들기][Link-Create_Stream_Analytics_Through_Azure_Portal]
-> * [Azure Portal을 사용하여 Stream Analytics 작업 입 · 출력 구성 및 변환 Query 정의][Link-Configure_Stream_Analytics_Job_Input_Output_And_Define_The_Transformation_Query_Through_Azure_Portal]
-> * [WizFi360 MQTT AT Command를 이용하여 Azure IoT Hub에 연동][Link-Standalone_Mqtt_Atcmd_Wizfi360]
+> * [[MS] Create IoT Hub using Azure Portal][Link-Create_IoT_Hub_Through_Azure_Portal]
+> * [Create Blob storage using Azure Portal][Link-Create_Blob_Storage_Through_Azure_Portal]
+> * [Create Stream Analytics using Azure Portal][Link-Create_Stream_Analytics_Through_Azure_Portal]
+> * [Setup Queries in Stream Analytics using Azure Portal][Link-Configure_Stream_Analytics_Job_Input_Output_And_Define_The_Transformation_Query_Through_Azure_Portal]
+> * [Connect to Azure IoT Hub using WizFi360 MQTT AT Command][Link-Standalone_Mqtt_Atcmd_Wizfi360]
 
+## Introduction
 
-## 소개
+It is possible to connect to **Microsoft Azure Service** using **WizFi360**, send data to cloud and monitor current status.
 
-**Microsoft Azure Service**에 **WizFi360**을 **연동**하여, Data를 Cloud로 전송하고, Monitoring을 할 수 있습니다.
-
-Data 통신은 다음과 같은 구조로 이루어집니다.
+Data communication will be established as following.
 
 ![][Link-Data_Communication_Structure]
 
-**MQTT AT Command**를 이용하여, IoT Hub Service 연결 및 Data 송신을 합니다.
+**MQTT AT Commands** will be used to connect to IoT Hub Service & send data.
 
-IoT Hub로 송신이 된 Data는 Stream Analytics를 통하여 Data 저장소 Blob Storage로 저장이 됩니다.
+Data sent to IoT Hub will be saved in Blob Storage through Stream Analytics.
 
-본 문서는 [Mbed][Link-Mbed] 기반 WizFi360 MQTT AT Command 이용한 Microsoft Azure Service 연동 예제에 대하여 Guide를 제공합니다.
+In this guide we will use WizFi360 with [Mbed][Link-Mbed] to connect to Microsoft Azure Services using MQTT AT Command.
 
+## Step 1: Required items
 
-
-## Step 1: 필수 구성 요소
-
-본 문서를 따라하기 전에 다음 항목이 준비되어야 합니다.
+Items below are required for this guide.
 
 ### Hadrware
  - Desktop or Laptop Computer
@@ -52,11 +48,11 @@ IoT Hub로 송신이 된 Data는 Stream Analytics를 통하여 Data 저장소 Bl
  - Preferred Serial Terminal (TeraTerm, Hercules, etc . . .)
 
 
-## Step 2: Device 준비
+## Step 2: Device preparation
 
-### 1. Hardware 준비
+### 1. Hardware preparation
 
-WizFi360-EVB-Shield는 NUCLEO-L476RG와 결합을 하여 사용되어 집니다. 따라서 WizFi360-EVB-Shield의 DIP Switch 및 UART Jumper Pin을 다음과 같이 설정이 필요합니다.
+WizFi360-EVB-Shield will be installed on top of NUCLEO-L476RG. Therefore DIP Switch and jumper cables shall be connected as following:
 
 > * SW1 : Off
 > * SW2 : Off
@@ -66,40 +62,38 @@ WizFi360-EVB-Shield는 NUCLEO-L476RG와 결합을 하여 사용되어 집니다.
 
 ![][Link-Set_Wizfi360_Evb_Shield_Dip_Sw]
 
-### 2. Device 연결
+### 2. Device connection
 
-Hardware 설정 후, Mini USB Cable을 이용하여 NUCLEO-L476RG를 Desktop 혹은 Laptop Computer와 연결을 합니다.
+After connecting hardware, connect NUCLEO-L476RG to Desktop or Laptop using USB Cable.
 
-**장치 관리자**에서 NUCLEO-L476RG와 연결된 **COM Port**를 확인 할 수 있습니다.
+Check **COM Port** from **Device Manager**.
 
-![][Link-Device-Management]
-
-> 장치 관리자에서 COM Port를 확인 할 수 없는 경우, 다음 Link에서 Driver를 Downlonad하여 설치하시기 바랍니다.
+> If COM port cannot be found in Device manager, check link below and follow instructions.
 >
 > * [ST-LINK, ST-LINK/V2, ST-LINK/V2-1 USB driver][Link-St_Link_St_Link_V2_St_Link_V2_1_Usb_Driver]
 
 
-## Step 3: 동작 예제
+## Step 3: Sample application
 
-### 1. 예제 Download 및 실행
+### 1. Code Download & Execution
 
-**예제 Download**를 한 후, **File** > **Open Workspace**을 선택하여 **Project 실행**합니다.
+After code download, open project by selecting **File** > **Open Workspace**.
 
-> 예제는 다음 경로에 위치하고 있는 Project를 참고 바랍니다.
+> Sample code is stored in following path.
 >
 > * **samples/Wi-Fi/Mbed_Mqtt_Atcmd_Wizfi360**
 >
 > * **samples/Wi-Fi/Mbed_Mqtt_Atcmd_Wizfi360_Azure_C_Shared_Utility**
 >
-> **Mbed_Mqtt_Atcmd_Wizfi360** 경우에는 Device Explorer 혹은 Azure IoT Explorer와 같은 Tool을 이용하여 **별도의 SAS Token 생성 과정이 필요**합니다.
+> In case of **Mbed_Mqtt_Atcmd_Wizfi360** SAS Token was created using Device Explorer or Azure IoT Explorer.
 >
-> **Mbed_Mqtt_Atcmd_Wizfi360_Azure_C_Shared_Utility** 경우에는 Azure IoT Common Library인 azure_c_shared_utility Library를 Porting을 한 Project이므로 **별도의 SAS Token 생성 과정이 필요 없으며, Project 내부에서 SAS Token 생성 과정을 처리**합니다.
+> In case of **Mbed_Mqtt_Atcmd_Wizfi360_Azure_C_Shared_Utility** there is no need to create SAS Token separately as azure_c_shared_utility Library was ported into Project.
 
 ![][Link-Execute_Project_Through_Mbed_Studio_1]
 
-### 2. Parameter 값 수정
+### 2. Parameter update
 
-Azure IoT Hub에 연결을 하기 위하여, 다음의 Parameter를 수정합니다.
+To connect to Azure IoT Hub, update next parameters.
 
 ```cpp
 /* Wi-Fi info */
@@ -119,35 +113,34 @@ char sas_token[] = "xxxxxxxxxx";
 
 ![][Link-Execute_Project_Through_Mbed_Studio_2]
 
-> **SAS Token 생성**은 다음을 참고 바랍니다.
+> For **SAS Token creation** refer to below.
 >
-> * [Device Explorer를 사용하여 SAS Token 생성하기][Link-Create_Sas_Token_Through_Device_Explorer]
-> * [Azure IoT Explorer를 사용하여 SAS Token 생성하기][Link-Create_Sas_Token_Through_Azure_Iot_Explorer]
+> * [Create SAS Token using Device Explorer][Link-Create_Sas_Token_Through_Device_Explorer]
+> * [Create SAS Token using Azure IoT Explore][Link-Create_Sas_Token_Through_Azure_Iot_Explorer]
 
-### 3. Project Build 및 Run
+### 3. Project Build & Run
 
-**Run Program**을 눌러 Project Build 및 Run을 합니다.
+Press **Run Program** to Project Build & Run.
 
 > Note :
 >
-> **Stream Analytics 실행** 중이어야 Blob Storage로 Data가 전달됩니다.
+> **Start Stream Analytics** in order to forward data to Blob Storage.
 
 ![][Link-Execute_Project_Through_Mbed_Studio_3]
 
 
-## Step 4: 동작 예제 결과
+## Step 4: Results
 
-Terminal Program으로 WizFi360에서 Azure IoT Hub로 전송하는 Data, Blob Storage에서 WizFi360으로부터 수신한 Data를 확인 할 수 있습니다.
+In terminal program we can check data sent from WizFi360 to Azure IoT Hub. In Blob Storage we can check received data.
 
 ![][Link-Result_Execute_Project_Through_Mbed_Studio_1]
 
 ![][Link-Result_Execute_Project_Through_Mbed_Studio_2]
 
 
-## 더 보기
+## References
 
-- [WizFi360 MQTT AT Command를 이용하여 Azure IoT Hub에 연동][Link-Standalone_Mqtt_Atcmd_Wizfi360]
-
+- [Connect to Azure IoT Hub using WizFi360 MQTT AT Command][Link-Standalone_Mqtt_Atcmd_Wizfi360]
 
 [Link-Azure-Portal]: https://portal.azure.com/
 [Link-Azure-Account-Free]: https://azure.microsoft.com/ko-kr/free/
