@@ -13,26 +13,28 @@
 <link data-react-helmet="true" rel="shortcut icon" href="/Document/img/favicon.ico">
 
 
-<link rel="stylesheet" href="/Document/styles.ad957658.css">
+<link rel="stylesheet" href="/Document/styles.87bbe9e7.css">
 
 
-<link rel="preload" href="/Document/styles.ee375ffa.js" as="script">
+<link rel="preload" href="/Document/styles.5c4e8cff.js" as="script">
 
-<link rel="preload" href="/Document/runtime~main.a9446c0f.js" as="script">
+<link rel="preload" href="/Document/runtime~main.3624c23b.js" as="script">
 
-<link rel="preload" href="/Document/main.d1057eea.js" as="script">
+<link rel="preload" href="/Document/main.7bf740ac.js" as="script">
 
-<link rel="preload" href="/Document/1.b26d27f9.js" as="script">
+<link rel="preload" href="/Document/1.64943281.js" as="script">
 
-<link rel="preload" href="/Document/2.943a2a6c.js" as="script">
+<link rel="preload" href="/Document/2.18b7ff15.js" as="script">
 
-<link rel="preload" href="/Document/1be78505.97e84ff1.js" as="script">
+<link rel="preload" href="/Document/3.5e840b63.js" as="script">
 
-<link rel="preload" href="/Document/2d31042b.1ed05077.js" as="script">
+<link rel="preload" href="/Document/1be78505.db9772a1.js" as="script">
 
-<link rel="preload" href="/Document/17896441.e976ee19.js" as="script">
+<link rel="preload" href="/Document/2d31042b.fc3dc13a.js" as="script">
 
-<link rel="preload" href="/Document/c646d582.aa64bcac.js" as="script">
+<link rel="preload" href="/Document/17896441.c27bbf63.js" as="script">
+
+<link rel="preload" href="/Document/c646d582.88f3408d.js" as="script">
 
 </head>
 <body>
@@ -60,23 +62,25 @@ Otherwise AT+AWSCON will return error.</p></div></div><h2><a aria-hidden="true" 
 Check screenshot below.</p></div></div><p><img src="/Document/img/aws_cloud/aws_shadow_interact.PNG"></p></details><br>Below is screenshot from terminal<p><img src="/Document/img/aws_cloud/token2shell.PNG"></p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="results"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#results" title="Direct link to heading">#</a>Results</h2><ol><li>Results can be checked in AWS -&gt; AWS IoT -&gt; Manage -&gt; Things -&gt; Shadow.</li><li>Since we subscribed to &quot;updated&quot; topic, when MQTT message is sent we can see reply message instantly.</li></ol><p><img src="/Document/img/aws_cloud/aws_shadow.PNG"></p><p><strong>Congratulations</strong></p><p>WizFi360 is successfully connected to AWS!</p></div></article><div class="margin-vert--xl"><div class="row"><div class="col"><a href="https://github.com/facebook/docusaurus/edit/master/website/docs/connect_to_cloud/standalone_aws_atcmd.md" target="_blank" rel="noreferrer noopener"><svg fill="currentColor" height="1.2em" width="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 40 40" style="margin-right:0.3em;vertical-align:sub"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div></div></div><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/Document/docs/connect_to_cloud/arduino_mqtt"><h5 class="pagination-nav__link--sublabel">Previous</h5><h4 class="pagination-nav__link--label">« WizFi360 MQTT AT Command를 이용한 Azure IoT Hub 연동 예제</h4></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/Document/docs/connect_to_cloud/standalone_aws_atcmd_kr"><h5 class="pagination-nav__link--sublabel">Next</h5><h4 class="pagination-nav__link--label">WizFi360 AT Command를 이용하여 AWS IoT에 연결 »</h4></a></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"><ul class="contents contents__left-border"><li><a href="#getting-started" class="contents__link">Getting Started</a><ul><li><a href="#hardware-requirement" class="contents__link">Hardware Requirement</a></li><li><a href="#software-requirement" class="contents__link">Software Requirement</a></li></ul></li><li><a href="#introduction" class="contents__link">Introduction</a></li><li><a href="#device-preparation" class="contents__link">Device preparation</a><ul><li><a href="#hardware-setting" class="contents__link">Hardware setting</a></li><li><a href="#device-connection" class="contents__link">Device connection</a></li></ul></li><li><a href="#at-commands-description" class="contents__link">AT Commands Description</a><ul><li><a href="#1-set-ssl-certificate" class="contents__link">1. Set SSL Certificate</a></li><li><a href="#2-set-private-key" class="contents__link">2. Set Private Key</a></li><li><a href="#3-set-certificate-for-thing" class="contents__link">3. Set Certificate for Thing</a></li><li><a href="#4-connect-to-aws" class="contents__link">4. Connect to AWS</a></li></ul></li><li><a href="#connection-procedure" class="contents__link">Connection procedure</a><ul><li><a href="#connect-your-device-and-launch-terminal" class="contents__link">Connect your device and launch terminal</a></li><li><a href="#connect-wizfi360-to-wifi" class="contents__link">Connect WizFi360 to WiFi</a></li><li><a href="#enter-certificate" class="contents__link">Enter Certificate</a></li><li><a href="#connection-to-aws" class="contents__link">Connection to AWS</a></li></ul></li><li><a href="#results" class="contents__link">Results</a></li></ul></div></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="row footer__links"><div class="col footer__col"><h4 class="footer__title">Docs</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" href="/Document/docs/intro">Getting Started</a></li><li class="footer__item"><a class="footer__link-item" href="/Document/docs/basic_guides/firmware_upgrade">Application guides</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Community</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" target="_blank" rel="noopener noreferrer" href="https://forum.wiznet.io">WIZnet Forum</a></li><li class="footer__item"><a class="footer__link-item" target="_blank" rel="noopener noreferrer" href="http://maker.wiznet.io/">WIZnet Maker</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Family Site</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" href="/Document/blog">Blog</a></li><li class="footer__item"><a class="footer__link-item" target="_blank" rel="noopener noreferrer" href="https://wiznet.io">WIZnet</a></li></ul></div></div><div class="text--center"><div>Copyright © 2020 WIZnet Co., Ltd. All Rights Reserved.</div></div></div></footer>
 </div>
 
-<script src="/Document/styles.ee375ffa.js"></script>
+<script src="/Document/styles.5c4e8cff.js"></script>
 
-<script src="/Document/runtime~main.a9446c0f.js"></script>
+<script src="/Document/runtime~main.3624c23b.js"></script>
 
-<script src="/Document/main.d1057eea.js"></script>
+<script src="/Document/main.7bf740ac.js"></script>
 
-<script src="/Document/1.b26d27f9.js"></script>
+<script src="/Document/1.64943281.js"></script>
 
-<script src="/Document/2.943a2a6c.js"></script>
+<script src="/Document/2.18b7ff15.js"></script>
 
-<script src="/Document/1be78505.97e84ff1.js"></script>
+<script src="/Document/3.5e840b63.js"></script>
 
-<script src="/Document/2d31042b.1ed05077.js"></script>
+<script src="/Document/1be78505.db9772a1.js"></script>
 
-<script src="/Document/17896441.e976ee19.js"></script>
+<script src="/Document/2d31042b.fc3dc13a.js"></script>
 
-<script src="/Document/c646d582.aa64bcac.js"></script>
+<script src="/Document/17896441.c27bbf63.js"></script>
+
+<script src="/Document/c646d582.88f3408d.js"></script>
 
 
 </body>
