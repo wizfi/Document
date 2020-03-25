@@ -1,5 +1,5 @@
 ---
-id: arduino_mqtt
+id: arduino_mqtt_e
 title: Connect to Azure IoT Hub using WizFi360 MQTT AT Command
 sidebar_label: Arduino MQTT
 ---

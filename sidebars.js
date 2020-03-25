@@ -48,7 +48,8 @@ module.exports = {
               'connect_to_cloud/mbed_atcmd',
               'connect_to_cloud/arduino_atcmd',
               'connect_to_cloud/arduino_atcmd_e',
-              'connect_to_cloud/arduino_mqtt'
+              'connect_to_cloud/arduino_mqtt',
+              'connect_to_cloud/arduino_mqtt_e'
             ]
           },
           {
