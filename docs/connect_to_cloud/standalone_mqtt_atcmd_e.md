@@ -2,6 +2,8 @@
 id: standalone_mqtt_e
 title: Connect to Azure IoT Hub using WizFi360 MQTT AT Command
 sidebar_label: Standalone MQTT
+keywords:
+    - WizFi360
 ---
 
 ## Getting started

@@ -33,7 +33,8 @@ module.exports = {
           'basic_guides/http_server',
           'basic_guides/throughput',
           'basic_guides/w600sdk',
-          'basic_guides/airkiss'
+          'basic_guides/airkiss',
+          'basic_guides/arduino_ide'
         ]
       },
       {
@@ -46,9 +47,11 @@ module.exports = {
             items:['connect_to_cloud/standalone_mqtt',
               'connect_to_cloud/standalone_mqtt_e',
               'connect_to_cloud/standalone_atcmd',
+              'connect_to_cloud/standalone_atcmd_e',
               'connect_to_cloud/mbed_mqtt',
               'connect_to_cloud/mbed_mqtt_e',
               'connect_to_cloud/mbed_atcmd',
+              'connect_to_cloud/mbed_atcmd_e',
               'connect_to_cloud/arduino_atcmd',
               'connect_to_cloud/arduino_atcmd_e',
               'connect_to_cloud/arduino_mqtt',

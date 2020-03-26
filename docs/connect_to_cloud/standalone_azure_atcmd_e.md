@@ -1,14 +1,17 @@
 ---
-id: standalone_atcmd
-title: WizFi360 Azure AT Command를 이용하여 Azure IoT Hub에 연결
+id: standalone_atcmd_e
+title: Connect to Azure IoT Hub using WizFi360 Azure AT Command
 sidebar_label: Standalone AT Cmd
+keywords:
+  - WizFi360
+  - Azure
 ---
 
-## 시작하기 전에
+## Getting Started
 
 ### Hardware Requirement
 -   Desktop or laptop computer
--   MicroUSB 케이블
+-   MicroUSB cable
 -   WizFi360-EVB-Shield
 
 ### Software Requirement
@@ -16,54 +19,58 @@ sidebar_label: Standalone AT Cmd
 -   Preferred Serial Terminal (TeraTerm, YAT, etc.)
 -   [Azure IoT Explorer]
 
-> [**Azure Portal**][Link-Azure-Portal]에 Login을 합니다. 계정이 없는 경우, 계정 생성 후에 Login을 진행합니다.
+> Login to [**Azure Portal**][Link-Azure-Portal].
 >
-> ※ 본 문서는 [**체험 계정**][Link-Azure-Account-Free]으로 진행합니다.
+> ※ In this guide we will procedd with [**free account**][Link-Azure-Account-Free].
+> To learn how to create IoT Hub please refer to [Azure Cloud Service Introduction][Link-Azure_Cloud_Introduction].
 >
-> Azure Portal을 사용하여 IoT Hub 만들기 등 앞선 일련의 과정에 대하여 [Azure Cloud 소개][Link-Azure_Cloud_Introduction]를 참조하시기 바랍니다.
->
-> * [Azure Portal을 사용하여 IoT Hub 만들기][Link-Create_IoT_Hub_Through_Azure_Portal]
->
-> * [Azure Portal을 사용하여 Blob Storage 만들기][Link-Create_Blob_Storage_Through_Azure_Portal]
->
-> * [Azure Portal을 사용하여 Stream Analytics 만들기][Link-Create_Stream_Analytics_Through_Azure_Portal]
->
-> * [Azure Portal을 사용하여 Stream Analytics 작업 입 · 출력 구성 및 변환 Query 정의][Link-Configure_Stream_Analytics_Job_Input_Output_And_Define_The_Transformation_Query_Through_Azure_Portal]
+> * [[MS] Create IoT Hub using Azure Portal][Link-Create_IoT_Hub_Through_Azure_Portal]
+> * [Create Blob storage using Azure Portal][Link-Create_Blob_Storage_Through_Azure_Portal]
+> * [Create Stream Analytics using Azure Portal][Link-Create_Stream_Analytics_Through_Azure_Portal]
+> * [Setup Queries in Stream Analytics using Azure Portal][Link-Configure_Stream_Analytics_Job_Input_Output_And_Define_The_Transformation_Query_Through_Azure_Portal]
 
-## 소개
-Microsoft Azure 는 Microsoft 의 클라우드 컴퓨팅 서비스입니다.
-Microsoft Azure 의 서비스에 [WizFi360] 을 연동하여 데이터를 클라우드로 전송하고, 모니터링 할 수 있습니다.
+## Introduction
 
-본 문서에서는 WizFi360 이용하여 MS Azure Services에 연결 방법에 대한 가이드를 제공합니다.
-이 프로세스는 다음 단계로 구성됩니다.
-- Azure IoT Hub 준비
-- IoT 디바이스 등록
-- Azure IoT와 연결 및 데이터 통신
+Microsoft Azure is cloud computing service.
+Using [WizFi360] we can connect to Azure services, transmit data and monitor status.
 
-Azure IoT Hub 준비와 IoT 디바이스 등록 과정 대해 [Azure Cloud 소개] 참조하시기 바랍니다.
+In this document we will guide how to connect Arduino Mega 2560 + WizFi360 to MS Azure Services.
+Thic process consists of following steps:
+- Azure IoT Hub preparation
+- IoT device registration
+- Connect to Azure IoT and transmit data
 
-WiFi모듈 테스트를 위해 [WizFi360-EVB-Shield] Evaluation 보드를 사용되었습니다.
+For Azure IoT Hub setup and IoT device creation please refer to [Azure Cloud Introduction].
+
+For this guide [WizFi360-EVB-Shield] Evaluation board was used.
 
 ![](/Document/img/azure_cloud/mqtt_atcmd_wizfi360_required_item_1.png)
 
-## 디바이스 준비
+## Device preparation
 
-### 하드웨어 설정
+### Hardware configuration
 
-본 문서에서 WizFi360-EVB-Shield가 standalone mode에서 사용됩니다. 따라서 UART를 위해 MicroUSB를 사용할겁니다.
-MicroUSB 사용하는경우 SW1을 ON 시키고 MicroUSB 연결해야됩니다.
+WizFi360-EVB-Shield will be used in **Standalone mode**. Therefore DIP Switch and jumper cables shall be connected as following:
+
+> * SW1 : On
+> * SW2 : Off
+> * SW3 : Off
+
 ![](/Document/img/azure_cloud/WizFi360EVB_SW1.JPG)
 
-### 디바이스 연결
-하드웨어 설정 후 MicroUSB 이용하여 PC와 연결합니다. PC운영체제에서 보드와 연결된 COM 포트를 확인할 수 있습니다.
-> 윈도우 운영체제의 경우, 장치 관리자(Device Manager)에서 COM 포트를 확인할 수 있습니다.
+### Device connection
+
+After connecting hardware, connect WizFi360-EVB-Shield to Desktop or Laptop using USB Cable.
+
+Check **COM Port** from **Device Manager**.
+
 ![](/Document/img/azure_cloud/DeviceManager.JPG)
 
-> 장치 관리자에서 COM 포트를 확인할 수 없는 경우, 다음 링크에서 드라이버를 다운로드하여 설치하시기 바랍니다.
+> If COM port cannot be found in Device manager, check drivers from link below.
   - [Silicon Labs CP210x USB to UART Driver]
 
 
-## AT 명령어
+## AT Commands
 
 
 ### 1. Set current WiFi mode (not saved in flash)
@@ -96,10 +103,10 @@ Defined values:
 
 | Parameter | Value |
 |:--------|:--------|
-| 0 |  SoftAP DHCP 와 Station DHCP 를 disable 한다.|
-| 1 | SoftAP DHCP 는 enable 하고 Station DHCP 는 disable 한다. |
-| 2 | 2: SoftAP DHCP 는 disable 하고 Station DHCP 는 enable 한다. |
-| 3 | SoftAP DHCP 와 Station DHCP 를 enable 한다. (factory default)|
+| 0 | DIsable SoftAP DHCP & Station DHCP.|
+| 1 | Enable SoftAP DHCP & Disable Station DHCP. |
+| 2 | Disable SoftAP DHCP & enable Station DHCP. |
+| 3 | Enable SoftAP DHCP & Station DHCP. (factory default)|
 
 ### 3. List available APs
 **AT Command:** AT+CWLAP
@@ -115,10 +122,10 @@ Defined values:
 | Parameter | Value |
 |:--------|:--------|
 | &lt;ecn&gt;| 0: Open <br /> 1: WEP <br /> 2: WPA_PSK<br />3: WPA2_PSK<br />4:WPA_WPA2_PSK |
-| &lt;ssid&gt; | string parameter. AP의 ssid |
+| &lt;ssid&gt; | string parameter. AP ssid |
 | &lt;rssi&gt; | signal strength |
-| &lt;mac&gt; |  string parameter. AP의 mac|
-| &lt;wps&gt; | 0: WPS는 disable된다 <br /> 1: WPS는 enable된다 |
+| &lt;mac&gt; |  string parameter. AP mac|
+| &lt;wps&gt; | 0: Disable WPS <br /> 1: Enable WPS |
 
 ### 4. Connect to AP
 
@@ -135,7 +142,7 @@ Defined values:
 |:--------|:--------|
 | &lt;ssid&gt; | string parameter. Target AP의 ssid. MAX: 32 bytes |
 | &lt;pwd&gt; | string parameter. Target AP의 password. MAX: 64-byte ASCII |
-| &lt;bssid&gt; | string parameter, target AP 의 MAC address, 같은 SSID 를 가진 여러 개의 AP 들이 있을 때 사용된다. |
+| &lt;bssid&gt; | string parameter, target AP' MAC address, used in case if there are several APs with same SSID. |
 
 ### 5. Azure IoT Hub configuration set
 
@@ -151,9 +158,9 @@ Defined values:
 
 | Parameter | Value |
 |:--------|:--------|
-| &lt;hub ID&gt; | string parameter. IoT Hub의 ID |
-| &lt;device ID&gt; | string parameter. IoT Device의 ID |
-| &lt;key&gt; | string parameter, IoT Device의 Key |
+| &lt;hub ID&gt; | string parameter. IoT Hub ID |
+| &lt;device ID&gt; | string parameter. IoT Device ID |
+| &lt;key&gt; | string parameter, IoT Device Key |
 
 ### 6. Set MQTT Topic
 
@@ -169,14 +176,14 @@ Defined values:
 
 | Parameter | Value |
 |:--------|:--------|
-| &lt;publish topic&gt; | string parameter, WizFi360 이 publish 하는 topic |
-| &lt;subscribe topic&gt; |  string parameter, WizFi360 이 subscribe 하는 topic|
-| &lt;subscribe topic2&gt; | string parameter, WizFi360 이 subscribe 하는 topic |
-| &lt;subscribe topic3&gt; | string parameter, WizFi360 이 subscribe 하는 topic |
+| &lt;publish topic&gt; | string parameter, topic where WizFi360 will publish |
+| &lt;subscribe topic&gt; |  string parameter, topic where WizFi360 will subscribe |
+| &lt;subscribe topic2&gt; | string parameter, topic where WizFi360 will subscribe |
+| &lt;subscribe topic3&gt; | string parameter, topic where WizFi360 will subscribe |
 
 > Note:
-- 이 command 는 broker 에 연결하기전에 설정되어야 합니다.
-- &lt;subscribe topic2&gt; 와 &lt;subscribe topic3&gt;는 Firmware v1.0.5.0 이후 version 부터 사용가능 합니다.
+- This command shall be set before connecting to broker.
+- &lt;subscribe topic2&gt; & &lt;subscribe topic3&gt; are available in Firmware v1.0.5.0 and later.
 
 ### 7. Connect to Azure
 
@@ -187,10 +194,11 @@ Syntax:
 | Type | Command | Response |
 |:--------|:--------|:--------|
 | Set | AT+AZCON | CONNECT <br /> OK |
+
 > Note:
-• 이 command 를 전송하기전에 AT+AZSET command 와 AT+MQTTTOPIC command 를 설정합니다.
-• Connect 이후 AT+MQTTPUB command 를 통해 Azure Sever 에 데이터를 전송합니다.
-• 자세한 내용은 https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-mqtt-support 를 참조하세요.
+• Before sending this ocmmand, AT+AZSET command & AT+MQTTTOPIC command shall be set.
+• After connection data can be sent to Azure server using AT+MQTTPUB command.
+• For more details please refer to https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-mqtt-support.
 
 ### 8. Publish a message
 
@@ -203,17 +211,16 @@ Syntax:
 | Set | AT+MQTTPUB=&lt;message&gt;| OK |
 
 > Note:
-• 이 command 는 MQTT 가 연결되어 있을 때 사용됩니다.
-• Publish 한 data 의 topic 은 AT+MQTTTOPIC command 에 의해 결정되며, 사용자는 broker 에 연결하기전에 topic 을 설정합니다.
+• This command shall be used when MQTT connection is established.
+• Topic where data will be published is set with AT+MQTTTOPIC command, user shall define topic before connecting to broker.
 
-## 동작 예제
+## Running sample code
 
-### 시리얼 터미널 연결 및 실행
+### Connect in serial terminal & code execution
 
-시리얼 터미널 프로그램을 실행하여 디바이스 연결 단계에서 확인한 보드의 COM 포트와 Baudrate 115200을 선택하여 시리얼 포트를 연결합니다.
-> 디버그 메시지 출력용 시리얼 포트 설정 정보: 115200-8-N-1, None.
+For connection use following configuration in terminal: 115200-8-N-1, None.
 
-### WizFi360모듈의 WiFi 설정
+### WiFi setting
 
 #### 1.  Set Wifi station mode
 
@@ -245,7 +252,7 @@ Syntax:
 |:--------|:--------|
 | AT+CIPSTA_CUR?  | +CIPSTA_CUR:ip:”192.168.10.13” <br /> +CIPSTA_CUR:gateway:”192.168.10.1” <br /> +CIPSTA_CUR:network:”255.255.255.0” |
 
-### 다음 AT 명령을 실행하여 Azure 서비스에 연결
+### Connect to Azure services using next AT commands
 
 #### 1.  Set Azure connection
 
@@ -278,24 +285,13 @@ Syntax:
 
 ![](/Document/img/azure_cloud/Token2Shell.jpg)
 
-### 동작 예제 결과
+### Results
 
-1. IoT Explorer 에서 Telemetry Section안에 "Start" 버튼을 누릅니다.
-> MQTTPUB 명령을 통해 메시지를 보내기 전에 "Start" 버튼을 눌러야 합니다.
-2. 터미널에서 MQTTPUB command으로 수신한 데이터를 확인 할 수 있습니다.
+1. Press "Start" button in Telemetry Section in IoT Hub Explorer.
+> "Start" button shall be pressed before sending data using MQTTPUB commands.
+2. Check data sent with MQTTPUB command.
 
 ![](/Document/img/azure_cloud/azure_iot_explorer.png)
-
-## 다음 단계
-
-1. [Azure Portal을 사용하여 Stream Analytics 작업 입 · 출력 구성 및 변환 Query 정의][Link-Configure_Stream_Analytics_Job_Input_Output_And_Define_The_Transformation_Query_Through_Azure_Portal]
-
-2. WizFi360 Azure AT Command를 이용한 Azure IoT Hub 연동 예제
-
-	* [Mbed Example]
-
-	* [Arduino Example]
-
 
 
 [Link-Azure-Portal]: https://portal.azure.com/

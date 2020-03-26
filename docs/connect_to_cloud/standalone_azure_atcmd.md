@@ -1,7 +1,9 @@
 ---
 id: standalone_atcmd
 title: WizFi360 Azure AT Command를 이용하여 Azure IoT Hub에 연결
-sidebar_label: Standalone AT Cmd
+sidebar_label: Standalone AT Cmd (한국어)
+keywords:
+	- WizFi360
 ---
 
 ## 시작하기 전에

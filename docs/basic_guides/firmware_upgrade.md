@@ -2,6 +2,8 @@
 id: firmware_upgrade
 title: Firmware Upgrade Guide
 sidebar_label: Firmware Upgrade
+keywords: 
+    - WizFi360
 ---
 
 # There are three methods to update firmware: Tera Term(Serial Program), Cloud or Upgrade Tool.

@@ -2,6 +2,10 @@
 id: location_tracker
 title: Location Tracker with WizFi360
 sidebar_label: Location Tracker
+keywords: 
+    - WizFi360
+    - location tracking
+    - unwired labs
 ---
 
 ## 시작하기 전에

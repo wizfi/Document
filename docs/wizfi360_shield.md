@@ -2,6 +2,9 @@
 id: wizfi360_shield
 title: WizFi360-EVB-Shield
 sidebar_label: WizFi360-EVB-Shield
+keywords: 
+    - WizFi360
+    - WizFi360-EVB-Shield
 ---
 
 ![WizFi360-EVB-Shield](/Document/img/wizfi360-evb.jpg)

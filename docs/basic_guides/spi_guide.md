@@ -2,6 +2,9 @@
 id: spi_guide
 title: SPI Guide
 sidebar_label: SPI Guide
+keywords: 
+    - WizFi360
+    - SPI
 ---
 
 ## Introduction

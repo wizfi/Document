@@ -2,6 +2,9 @@
 id: throughput
 title: Throughput
 sidebar_label: Throughput
+keywords: 
+   - WizFi360
+   - Throughput
 ---
 
 ## Test Environment

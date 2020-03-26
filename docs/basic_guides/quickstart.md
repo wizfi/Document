@@ -2,6 +2,8 @@
 id: quickstart
 title: Quickstart Giode
 sidebar_label: Quickstart
+keywords: 
+    - WizFi360
 ---
 
 ## Environment setting

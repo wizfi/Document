@@ -1,46 +1,49 @@
 ---
-id: mbed_atcmd
-title: NUCLEO-L476RG + WizFi360 Azure AT Command를 이용하여 Azure IoT Hub에 연결
+id: mbed_atcmd_e
+title: Connect to Azure IoT Hub using NUCLEO-L476RG + WizFi360 Azure AT Command
 sidebar_label: Mbed AT Cmd
+keywords:
+    - WizFi360
+    - Mbed
 ---
 
-## 시작하기 전에
+## Getting Started
 
 ### Hardware Requirement
 -   [NUCLEO-L476RG][Link-Nucleo-L476rg]
 -   Desktop or laptop computer
--   USB 케이블
+-   USB cable
 -   WizFi360-EVB-Shield
 
 ### Software Requirement
 
-- Microsoft Azure Account (Azure 구독이 아직 없는 경우 체험 무료[계정]을 만듭니다.)
+- Microsoft Azure Account (To create Azure account [press here].)
 - Preferred Serial Terminal (TeraTerm, YAT, etc.)
 - [Azure IoT Explorer]
 - MBED Studio / MBED Online Compiler
 
-## 소개
+## Introduction
 
-Microsoft Azure 는 Microsoft 의 클라우드 컴퓨팅 서비스입니다.
-Microsoft Azure 의 서비스에 [WizFi360] 을 연동하여 데이터를 클라우드로 전송하고, 모니터링 할 수 있습니다.
+Microsoft Azure is cloud computing service.
+Using [WizFi360] we can connect to Azure services, transmit data and monitor status.
 
-본 문서에서는 NUCLEO-L476G + WizFi360 이용하여 MS Azure Services에 연결 방법에 대한 가이드를 제공합니다.
-이 프로세스는 다음 단계로 구성됩니다.
-- Azure IoT Hub 준비
-- IoT 디바이스 등록
-- Azure IoT와 연결 및 데이터 통신
+In this document we will guide how to connect Arduino Mega 2560 + WizFi360 to MS Azure Services.
+Thic process consists of following steps:
+- Azure IoT Hub preparation
+- IoT device registration
+- Connect to Azure IoT and transmit data
 
-Azure IoT Hub 준비와 IoT 디바이스 등록 과정 대해 [Azure Cloud 소개] 참조하시기 바랍니다.
+For Azure IoT Hub setup and IoT device creation please refer to [Azure Cloud Introduction].
 
-WiFi모듈 테스트를 위해 [WizFi360-EVB-Shield] Evaluation 보드를 사용되었습니다.
+For this guide [WizFi360-EVB-Shield] Evaluation board was used.
 
 ![](/Document/img/azure_cloud/mqtt_atcmd_wizfi360_required_item_1.png)
 
-## 디바이스 준비
+## Device preparation
 
-### 하드웨어 설정
+### Hardware configuration
 
-WizFi360-EVB-Shield는 NUCLEO-L476RG와 결합을 하여 사용되어 집니다. 따라서 WizFi360-EVB-Shield의 DIP Switch 및 UART Jumper Pin을 다음과 같이 설정이 필요합니다.
+WizFi360-EVB-Shield will be installed on top of NUCLEO-L476RG. Therefore DIP Switch and jumper cables shall be connected as following:
 
 > * SW1 : Off
 > * SW2 : Off
@@ -52,19 +55,17 @@ WizFi360-EVB-Shield는 NUCLEO-L476RG와 결합을 하여 사용되어 집니다.
 
 
 
-### 디바이스 연결
+### 2. Device connection
 
-Hardware 설정 후, Mini USB Cable을 이용하여 NUCLEO-L476RG를 Desktop 혹은 Laptop Computer와 연결을 합니다.
+After connecting hardware, connect NUCLEO-L476RG to Desktop or Laptop using USB Cable.
 
-**장치 관리자**에서 NUCLEO-L476RG와 연결된 **COM Port**를 확인 할 수 있습니다.
+Check **COM Port** from **Device Manager**.
 
-![][Link-Device-Management]
-
-> 장치 관리자에서 COM Port를 확인 할 수 없는 경우, 다음 Link에서 Driver를 Downlonad하여 설치하시기 바랍니다.
+> If COM port cannot be found in Device manager, check link below and follow instructions.
 >
 > * [ST-LINK, ST-LINK/V2, ST-LINK/V2-1 USB driver][Link-St_Link_St_Link_V2_St_Link_V2_1_Usb_Driver]
 
-## AT 명령어
+## AT commands
 
 ### 1. Set current WiFi mode (not saved in flash)
 
@@ -98,10 +99,10 @@ Defined values:
 
 | Parameter | Value |
 |:--------|:--------|
-| 0 |  SoftAP DHCP 와 Station DHCP 를 disable 한다.|
-| 1 | SoftAP DHCP 는 enable 하고 Station DHCP 는 disable 한다. |
-| 2 | 2: SoftAP DHCP 는 disable 하고 Station DHCP 는 enable 한다. |
-| 3 | SoftAP DHCP 와 Station DHCP 를 enable 한다. (factory default)|
+| 0 | DIsable SoftAP DHCP & Station DHCP.|
+| 1 | Enable SoftAP DHCP & Disable Station DHCP. |
+| 2 | Disable SoftAP DHCP & enable Station DHCP. |
+| 3 | Enable SoftAP DHCP & Station DHCP. (factory default)|
 
 ### 3. List available APs
 **AT Command:** AT+CWLAP
@@ -117,10 +118,10 @@ Defined values:
 | Parameter | Value |
 |:--------|:--------|
 | &lt;ecn&gt;| 0: Open <br /> 1: WEP <br /> 2: WPA_PSK<br />3: WPA2_PSK<br />4:WPA_WPA2_PSK |
-| &lt;ssid&gt; | string parameter. AP의 ssid |
+| &lt;ssid&gt; | string parameter. AP ssid |
 | &lt;rssi&gt; | signal strength |
-| &lt;mac&gt; |  string parameter. AP의 mac|
-| &lt;wps&gt; | 0: WPS는 disable된다 <br /> 1: WPS는 enable된다 |
+| &lt;mac&gt; |  string parameter. AP mac|
+| &lt;wps&gt; | 0: Disable WPS <br /> 1: Enable WPS |
 
 ### 4. Connect to AP
 
@@ -135,9 +136,9 @@ Defined values:
 
 | Parameter | Value |
 |:--------|:--------|
-| &lt;ssid&gt; | string parameter. Target AP의 ssid. MAX: 32 bytes |
-| &lt;pwd&gt; | string parameter. Target AP의 password. MAX: 64-byte ASCII |
-| &lt;bssid&gt; | string parameter, target AP 의 MAC address, 같은 SSID 를 가진 여러 개의 AP 들이 있을 때 사용된다. |
+| &lt;ssid&gt; | string parameter. Target AP ssid. MAX: 32 bytes |
+| &lt;pwd&gt; | string parameter. Target AP password. MAX: 64-byte ASCII |
+| &lt;bssid&gt; | string parameter, target AP' MAC address, used in case if there are several APs with same SSID. |
 
 ### 5. Azure IoT Hub configuration set
 
@@ -153,9 +154,9 @@ Defined values:
 
 | Parameter | Value |
 |:--------|:--------|
-| &lt;hub ID&gt; | string parameter. IoT Hub의 ID |
-| &lt;device ID&gt; | string parameter. IoT Device의 ID |
-| &lt;key&gt; | string parameter, IoT Device의 Key |
+| &lt;hub ID&gt; | string parameter. IoT Hub ID |
+| &lt;device ID&gt; | string parameter. IoT Device ID |
+| &lt;key&gt; | string parameter, IoT Device Key |
 
 ### 6. Set MQTT Topic
 
@@ -171,14 +172,14 @@ Defined values:
 
 | Parameter | Value |
 |:--------|:--------|
-| &lt;publish topic&gt; | string parameter, WizFi360 이 publish 하는 topic |
-| &lt;subscribe topic&gt; |  string parameter, WizFi360 이 subscribe 하는 topic|
-| &lt;subscribe topic2&gt; | string parameter, WizFi360 이 subscribe 하는 topic |
-| &lt;subscribe topic3&gt; | string parameter, WizFi360 이 subscribe 하는 topic |
+| &lt;publish topic&gt; | string parameter, topic where WizFi360 will publish |
+| &lt;subscribe topic&gt; |  string parameter, topic where WizFi360 will subscribe |
+| &lt;subscribe topic2&gt; | string parameter, topic where WizFi360 will subscribe |
+| &lt;subscribe topic3&gt; | string parameter, topic where WizFi360 will subscribe |
 
 > Note:
-- 이 command 는 broker 에 연결하기전에 설정되어야 합니다.
-- &lt;subscribe topic2&gt; 와 &lt;subscribe topic3&gt;는 Firmware v1.0.5.0 이후 version 부터 사용가능 합니다.
+- This command shall be set before connecting to broker.
+- &lt;subscribe topic2&gt; & &lt;subscribe topic3&gt; are available in Firmware v1.0.5.0 and later.
 
 ### 7. Connect to Azure
 
@@ -189,10 +190,11 @@ Syntax:
 | Type | Command | Response |
 |:--------|:--------|:--------|
 | Set | AT+AZCON | CONNECT <br /> OK |
+
 > Note:
-• 이 command 를 전송하기전에 AT+AZSET command 와 AT+MQTTTOPIC command 를 설정합니다.
-• Connect 이후 AT+MQTTPUB command 를 통해 Azure Sever 에 데이터를 전송합니다.
-• 자세한 내용은 https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-mqtt-support 를 참조하세요.
+• Before sending this ocmmand, AT+AZSET command & AT+MQTTTOPIC command shall be set.
+• After connection data can be sent to Azure server using AT+MQTTPUB command.
+• For more details please refer to https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-mqtt-support.
 
 ### 8. Publish a message
 
@@ -205,27 +207,30 @@ Syntax:
 | Set | AT+MQTTPUB=&lt;message&gt;| OK |
 
 > Note:
-• 이 command 는 MQTT 가 연결되어 있을 때 사용됩니다.
-• Publish 한 data 의 topic 은 AT+MQTTTOPIC command 에 의해 결정되며, 사용자는 broker 에 연결하기전에 topic 을 설정합니다.
+• This command shall be used when MQTT connection is established.
+• Topic where data will be published is set with AT+MQTTTOPIC command, user shall define topic before connecting to broker.
 
-## 동작 예제
+## Running sample code
 
-### Mbed 예제 코드 다운로드
-**예제 Download**를 한 후, **File** > **Open Workspace**을 선택하여 **Project 실행**합니다.
+### Mbed sample code download
 
-> 예제는 다음 경로에 위치하고 있는 Project를 참고 바랍니다.
+After **Sample Download**, open and launch project in **File** > **Open Workspace**.
+
+> Sample code can be found at following path.
 >
 > **samples/Wi-Fi/Mbed_Azure_Atcmd_Wizfi360**
 
 ![][Link-Execute_Project_Through_Mbed_Studio_1]
 
-Online Compiler 경우 다음 링크에서 Compiler에 import을 할 수 있습니다.
+Sample code also can be imported into Online Compiler from following link:
+
 > https://os.mbed.com/users/vikshin/code/Mbed-Azure-Atcmd-WizFi360/
 ![](/Document/img/azure_cloud/Mbed_Azure_online_compiler.JPG)
 
 ### Modify parameters
 
-Azure IoT Hub 연결 위한 WiFi ssid, WiFi password, Hub ID, Device ID, Device Key 변경하여 테스트 해볼 수 있습니다.
+Update your credentials (WiFi ssid, WiFi pwd, Hub ID, Device ID, Device Key) in order to connect to Azure IoT Hub.
+
 ````cpp
 /* WiFi info */
 char ssid[] = "XXXXXXXXXXXXXXXXXXXXXXXX";
@@ -238,28 +243,23 @@ char device_primary_key[] = "XXXXXXXXXXXXXXXXXXXXXXXXXX=";
 ````
 
 
-**Run Program**을 눌러 Project Build 및 Run을 합니다.
+Press **Run Program** to build and run project.
 
 ![][Link-Execute_Project_Through_Mbed_Studio_3]
 
-업로드를 완료한 후, 시리얼 모니터를 이용하여 정상적으로 Nucleo 보드에 업로드 되었는지 확인할 수 있습니다.
+Use Serial monitor to check if code was successfully uploaded to Nucleo board.
 ![](/Document/img/azure_cloud/Mbed_Azure_atcmd_serial_monitor.JPG)
 
 
-### 동작 예제 결과
+### Results
 
-1. IoT Explorer 에서 Telemetry Section안에 "Start" 버튼을 누릅니다.
-> MQTTPUB 명령을 통해 메시지를 보내기 전에 "Start" 버튼을 눌러야 합니다.
-2. MQTTPUB command으로 수신한 데이터를 확인 할 수 있습니다.
+1. Press "Start" button in Telemetry Section in IoT Hub Explorer.
+> "Start" button shall be pressed before sending data using MQTTPUB commands.
+2. Check data sent with MQTTPUB command.
 
 ![](/Document/img/azure_cloud/Mbed_Azure_atcmd_iot_explorer.JPG)
 
-## 더 보기
-
-[WizFi360 Azure AT Command를 이용하여 Azure IoT Hub에 연결]
-
-
-[계정]: https://azure.microsoft.com/ko-kr/free/
+[press here]: https://azure.microsoft.com/ko-kr/free/
 [Azure Portal]: https://portal.azure.com/
 [WizFi360]: https://wizwiki.net/wiki/doku.php/products:wizfi360:start
 [WizFi360-EVB-Shield]: https://wizwiki.net/wiki/doku.php/products:wizfi360:board:wizfi360-evb:start

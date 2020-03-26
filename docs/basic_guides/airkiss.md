@@ -2,6 +2,9 @@
 id: airkiss
 title: Airkiss Configuration Guide
 sidebar_label: Airkiss Configuration
+keywords: 
+  - WizFi360
+  - AirKiss
 ---
 
 export const Highlight = ({children, color}) => ( <span style={{

@@ -2,6 +2,9 @@
 id: mbed_mqtt
 title: WizFi360 MQTT AT Command를 이용한 Azure IoT Hub 연동 예제
 sidebar_label: Mbed MQTT Cmd (한국어)
+keywords:
+    - WizFi360
+    - Mbed
 ---
 
 ## 시작하기 전에

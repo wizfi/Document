@@ -2,6 +2,9 @@
 id: standalone_aws_atcmd_kr
 title: WizFi360 AT Command를 이용하여 AWS IoT에 연결
 sidebar_label: Standalone AT Cmd (한국어)
+keywords:
+  - WizFi360
+  - AWS
 ---
 
 ## 시작하기 전에

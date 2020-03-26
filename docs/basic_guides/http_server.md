@@ -2,6 +2,9 @@
 id: http_server
 title: HTTP Server using WizFi360
 sidebar_label: HTTP Server
+keywords: 
+    - WizFi360
+    - HTTP Server
 ---
 
 ## Introduction

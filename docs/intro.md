@@ -2,6 +2,8 @@
 id: intro
 title: Getting Started
 sidebar_label: Introduction
+keywords:
+  - WizFi360
 ---
 
 ## Overview

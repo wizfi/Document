@@ -2,6 +2,9 @@
 id: http_client
 title: HTTP Client using WizFi360
 sidebar_label: HTTP Client
+keywords: 
+    - WizFi360
+    - HTTP Client
 ---
 
 ## Introduction

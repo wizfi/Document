@@ -2,6 +2,9 @@
 id: arduino_atcmd_e
 title: Connect to Azure IoT Hub using Arduino Mega 2560 + WizFi360 Azure AT Command
 sidebar_label: Arduino AT Cmd
+keywords:
+    - WizFi360
+    - Arduino
 ---
 
 ## Getting Started
@@ -180,10 +183,11 @@ Syntax:
 | Type | Command | Response |
 |:--------|:--------|:--------|
 | Set | AT+AZCON | CONNECT <br /> OK |
+
 > Note:
 • Before sending this ocmmand, AT+AZSET command & AT+MQTTTOPIC command shall be set.
 • After connection data can be sent to Azure server using AT+MQTTPUB command.
-• For more details please refer to https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-mqtt-support .
+• For more details please refer to https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-mqtt-support.
 
 ### 8. Publish a message
 

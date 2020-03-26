@@ -2,6 +2,9 @@
 id: wizfi360_mini
 title: WizFi360-EVB-Mini
 sidebar_label: WizFi360-EVB-Mini
+keywords: 
+    - WizFi360
+    - WizFi360-EVB-Mini
 ---
 
 ![WizFi360-EVB-Mini](/Document/img/wizfi360-mini3.png)

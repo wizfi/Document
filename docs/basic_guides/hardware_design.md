@@ -2,6 +2,9 @@
 id: hardware_design
 title: Hardware Design Guide
 sidebar_label: Hardware Design Guide
+keywords: 
+    - WizFi360
+    - hardware design
 ---
 
 ## Overview

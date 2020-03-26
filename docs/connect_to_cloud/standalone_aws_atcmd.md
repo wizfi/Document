@@ -2,6 +2,9 @@
 id: standalone_aws_atcmd
 title: Connect WizFi360 to AWS IoT using AT Command
 sidebar_label: Standalone AT Cmd
+keywords:
+  - WizFi360
+  - AWS
 ---
 
 ## Getting Started

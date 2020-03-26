@@ -2,6 +2,9 @@
 id: arduino_mqtt_e
 title: Connect to Azure IoT Hub using WizFi360 MQTT AT Command
 sidebar_label: Arduino MQTT
+keywords:
+    - WizFi360
+    - Arduino
 ---
 
 ## Getting started

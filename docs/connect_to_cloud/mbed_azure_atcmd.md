@@ -1,7 +1,10 @@
 ---
 id: mbed_atcmd
 title: NUCLEO-L476RG + WizFi360 Azure AT Command를 이용하여 Azure IoT Hub에 연결
-sidebar_label: Mbed AT Cmd
+sidebar_label: Mbed AT Cmd (한국어)
+keywords:
+    - WizFi360
+    - Mbed
 ---
 
 ## 시작하기 전에

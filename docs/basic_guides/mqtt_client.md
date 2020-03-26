@@ -2,6 +2,9 @@
 id: mqtt_client
 title: MQTT Client
 sidebar_label: MQTT Client
+keywords: 
+    - WizFi360
+    - MQTT Client
 ---
 
 ## Introduction

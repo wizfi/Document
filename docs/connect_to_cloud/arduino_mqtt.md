@@ -2,6 +2,9 @@
 id: arduino_mqtt
 title: WizFi360 MQTT AT Command를 이용한 Azure IoT Hub 연동 예제
 sidebar_label: Arduino MQTT (한국어)
+keywords:
+    - WizFi360
+    - Arduino
 ---
 
 ## 시작하기 전에

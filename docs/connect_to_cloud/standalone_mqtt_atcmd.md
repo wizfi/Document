@@ -2,6 +2,8 @@
 id: standalone_mqtt
 title: WizFi360 MQTT AT Command를 이용하여 Azure IoT Hub에 연동
 sidebar_label: Standalone MQTT (한국어)
+keywords:
+	- WizFi360
 ---
 
 ## 시작하기 전에

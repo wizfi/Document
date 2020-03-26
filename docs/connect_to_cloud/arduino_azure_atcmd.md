@@ -2,6 +2,9 @@
 id: arduino_atcmd
 title: Arduino Mega 2560 + WizFi360 Azure AT Command를 이용하여 Azure IoT Hub에 연결
 sidebar_label: Arduino AT Cmd (한국어)
+keywords:
+    - WizFi360
+    - Arduino
 ---
 
 ## 시작하기 전에

@@ -2,6 +2,9 @@
 id: resources
 title: Resources
 sidebar_label: Resources
+keywords: 
+  - WizFi360
+  - datasheet
 ---
 
 **DataSheet** provides a brief introduce about WizFi360. These documents describe the Features,package information and etc.
