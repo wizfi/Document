@@ -16,7 +16,7 @@ module.exports = {
       title: 'WizFi360',
       logo: {
         alt: 'My Site Logo',
-        src: 'img/wiznet_logo_110x37.png',
+        src: 'img/wizfi.png',
       },
       
       links: [
