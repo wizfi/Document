@@ -43,7 +43,7 @@ This document describes WizFi360-EVB-Mini. WizFi360-EVB-Mini is a compact develo
 
 ## Quick Start Guide
 
-[Quick Start Guide](https://wizwiki.net/wiki/lib/exe/fetch.php/products:wizfi360:wizfi360ds:wizfi360qs_v113e.pdf)
+[Quick Start Guide](basic_guides/quickstart)
 
 ## Datasheet
 

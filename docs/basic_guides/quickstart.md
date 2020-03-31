@@ -1,6 +1,6 @@
 ---
 id: quickstart
-title: Quickstart Giode
+title: Quickstart Guide
 sidebar_label: Quickstart
 keywords: 
     - WizFi360

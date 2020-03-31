@@ -219,7 +219,7 @@ TCP/UDP/SSL connection result and AT command used example.
 
 ## Hardware Design Guide
 
-[Hardware Design Guide](https://wizwiki.net/wiki/lib/exe/fetch.php/products:wizfi360:wizfi360ds:wizfi360_hardware_design_guide_v103_en.pdf)
+[Hardware Design Guide](basic_guides/hardware_design)
 
 | Version | Date    | Decription                    |
 | ------- | ------- | ----------------------------- |

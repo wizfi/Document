@@ -40,7 +40,7 @@ be up to 2Mbps, which can meet the requirement of various applications.
   - Support built-in unique MAC address and user configurable
   - Support firmware upgrade by UART Download / OTA (via WLAN)
   - Industrial grade (operating temperature range: -40 ° C \~ 85 ° C)
-  - CE, FCC certification 
+  - CE, FCC certification
 
 
 ## Details
@@ -57,7 +57,7 @@ be up to 2Mbps, which can meet the requirement of various applications.
       -  [AT command Example](http://wizwiki.net/wiki/doku.php?id=products:wizfi360:wizfi360ds:start#at_command_examples):
         It includes the Basic example using AT command and it is
         examples of TCP, UDP, SSL use.
-      - [Quick Start Guide](http://wizwiki.net/wiki/doku.php?id=products:wizfi360:wizfi360ds:start#quick_start_guide):
+      - [Quick Start Guide](basic_guides/quickstart):
         The examples using the WizFi360-EVB or WizFi360io, it describes
         the scenarios in order from Hardware setting to example of AT
         command use
@@ -65,7 +65,7 @@ be up to 2Mbps, which can meet the requirement of various applications.
 
 ## Evaluation Boards
 
-WizFi360-EVB-Mini|  WizFi360-EVB-Shield
+[WizFi360-EVB-Mini](wizfi360_mini)|  [WizFi360-EVB-Shield](wizfi360_shield)
 :-------------------------:|:-------------------------:
 ![WizFi360-CON](/Document/img/WizFi360-mini.png) | ![WizFi360-PA](/Document/img/img_evb_mini.png)
 - NodeMCU Pin-Compatible | Arduino Pin-Compatible
@@ -74,7 +74,7 @@ WizFi360-EVB-Mini|  WizFi360-EVB-Shield
 
 ## Custom Modules
 
-WizFi360io-H          |  WizFi360io-C
+[WizFi360io-H](wizfi360io)          |  [WizFi360io-C](wizfi360io)
 :-------------------------:|:-------------------------:
 ![WizFi360-CON](/Document/img/img_evb_mini_2.png) | ![WizFi360-PA](/Document/img/img_evb_shield_2.png)
 Similar to XBee pinout|5V operation
