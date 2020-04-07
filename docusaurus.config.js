@@ -89,7 +89,7 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl:
-            'https://github.com/wizfi/Document/',
+            'https://github.com/wizfi/Document/tree/master/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
