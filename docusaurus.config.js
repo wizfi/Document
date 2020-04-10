@@ -2,8 +2,7 @@ module.exports = {
   title: 'WizFi360',
   tagline: 'Designed for applications from IoT projects to industrial & smart devices',
   url: 'https://wizfi.github.io',
-  //baseUrl: '/Document/',
-  baseUrl: '/',
+  baseUrl: '/Document/',
   favicon: 'img/favicon.ico',
   organizationName: 'wizfi', // Usually your GitHub org/user name.
   projectName: 'Document', // Usually your repo name.
