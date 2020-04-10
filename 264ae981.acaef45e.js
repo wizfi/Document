@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[13],{147:function(a){a.exports=JSON.parse('{"wizfi-360":{"allTagsPath":"/Document/blog/tags","slug":"wizfi-360","name":"wizfi360","count":1,"permalink":"/Document/blog/tags/wizfi-360"},"azure":{"allTagsPath":"/Document/blog/tags","slug":"azure","name":"azure","count":1,"permalink":"/Document/blog/tags/azure"}}')}}]);
