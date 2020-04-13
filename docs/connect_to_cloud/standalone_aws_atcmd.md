@@ -165,7 +165,10 @@ AT+CWLAP
 AT+CWJAP_CUR="ssid","password" 
 
 // Query WizFi360 IP address
-AT+CIPSTA_CUR? 
+AT+CIPSTA_CUR?
+
+// SSL 설정. WizFi360 SSL인증서를 체크합니다. 체크 실패경우에 서버에 접속 불가능합니다.
+AT+CIPSSLCCONF=2
 ````
 
 ### Enter Certificate 

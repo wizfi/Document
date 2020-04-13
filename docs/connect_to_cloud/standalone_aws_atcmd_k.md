@@ -166,6 +166,9 @@ AT+CWJAP_CUR="ssid","password"
 
 // Query WizFi360 IP address
 AT+CIPSTA_CUR? 
+
+//Configure SSL, WizFi360 will check SSL certificate. If verification fails, WizFi360 won't connect to server
+AT+CIPSSLCCONF=2
 ````
 ### 인증서 저장
 
