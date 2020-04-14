@@ -1,3 +1,4 @@
+/* stylelint-disable docusaurus/copyright-header */
 /**
  * Any CSS included here will be global. The classic template
  * bundles Infima by default. Infima is a CSS framework designed to
@@ -6,15 +7,261 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #00a4b8;
-  --ifm-color-primary-dark: #0094a6;
-  --ifm-color-primary-darker: #008b9c;
-  --ifm-color-primary-darkest: #007381;
-  --ifm-color-primary-light: #00b4ca;
-  --ifm-color-primary-lighter: #00bdd4;
-  --ifm-color-primary-lightest: #00d5ef;
-  --ifm-code-font-size: 95%;
+  --ifm-alert-color: var(--ifm-heading-color);
+  --ifm-background-color: white;
+  --ifm-background-color-rgb: 255, 255, 255;
+  --ifm-background-surface-color: var(--ifm-panel-background);
+/*  --ifm-badge-border-radius: 0.25em;
+  --ifm-badge-padding-horizontal: 0.75em;
+  --ifm-badge-padding-vertical: 0.25em;*/
+  --ifm-blockquote-color: var(--ifm-color-primary);
+  --ifm-code-background: var(--ifm-color-emphasis-50);
+  --ifm-code-font-size: 85%;
+  --ifm-color-black: rgb(0, 27, 61);
+  --ifm-color-black-rgb: 0, 27, 61;
+  --ifm-color-blue: #438FFF;
+  --ifm-color-blue-rgb: 67, 143 ,255;
+  --ifm-color-content: var(--ifm-color-emphasis-800);
+  --ifm-color-content-secondary: var(--ifm-color-emphasis-600);
+  --ifm-color-danger: #ff1178;
+  --ifm-color-danger-rgb: 255, 17, 120;
+  --ifm-color-gray-25: rgba(0, 27, 61, 0.025);
+  --ifm-color-gray-40: rgba(0, 27, 61, 0.04);
+  --ifm-color-gray-50: rgba(0, 27, 61, 0.05);
+  --ifm-color-gray-75: rgba(0, 27, 61, 0.075);
+  --ifm-color-gray-100: rgba(0, 27, 61, 0.1);
+  --ifm-color-gray-150: rgba(0, 27, 61, 0.15);
+  --ifm-color-gray-200: rgba(0, 27, 61, 0.2);
+  --ifm-color-gray-300: rgba(0, 27, 61, 0.3);
+  --ifm-color-gray-400: rgba(0, 27, 61, 0.4);
+  --ifm-color-gray-500: rgba(0, 27, 61, 0.5);
+  --ifm-color-gray-600: rgba(0, 27, 61, 0.6);
+  --ifm-color-gray-700: rgba(0, 27, 61, 0.7);
+  --ifm-color-gray-800: rgba(0, 27, 61, 0.8);
+  --ifm-color-gray-900: rgba(0, 27, 61, 0.9);
+  --ifm-color-emphasis-25: var(--ifm-color-gray-25);
+  --ifm-color-emphasis-40: var(--ifm-color-gray-40);
+  --ifm-color-emphasis-50: var(--ifm-color-gray-50);
+  --ifm-color-emphasis-75: var(--ifm-color-gray-75);
+  --ifm-color-pink: #f44af5;
+  --ifm-color-pink-rgb: 244, 74 ,245;
+  --ifm-color-primary: #28D9F2;
+  --ifm-color-primary-rgb: 40, 217, 242;
+  --ifm-color-primary-dark: #00C6DD;
+  --ifm-color-purple: #9988ff;
+  --ifm-color-purple-rgb: 153, 136 ,255;
+  --ifm-color-secondary: var(--ifm-color-emphasis-100);
+  --ifm-color-success: #00ff7f;
+  --ifm-color-success-rgb: 0, 255, 127;
+  --ifm-color-warning-rgb: 255, 186, 0;
+  --ifm-contents-border-color: var(--ifm-color-emphasis-75);
+  --ifm-contents-padding-left: var(--ifm-spacing-horizontal);
+  --ifm-font-family-base: -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  --ifm-font-family-monospace: "Source Code Pro", Menlo, monospace;
+  --ifm-font-family-serif: "Source Serif Pro", Constantia, Lucida Bright, Lucidabright, "Lucida Serif", Lucida, "DejaVu Serif", "Bitstream Vera Serif", "Liberation Serif", Georgia, serif;
+  --ifm-font-size-base: 16px;
+  --ifm-footer-background-color: var(--ifm-background-color);
+  --ifm-footer-padding-vertical: calc(var(--ifm-spacing-vertical) * 4);
+  --ifm-global-shadow-md: 0 3px 8px 0px var(--ifm-hr-border-color);
+  --ifm-h2-font-size: 2em;
+  --ifm-heading-color: #001B3D;
+  --ifm-heading-font-family: Ubuntu, var(--ifm-font-family-base);
+  --ifm-heading-margin-bottom: calc( var(--ifm-spacing-vertical) * 3 );
+  --ifm-hero-background-color: var(--ifm-background-color);
+  --ifm-hero-text-color: var(--ifm-color-content);
+  --ifm-highlight-gradient: linear-gradient(150deg, var(--ifm-color-primary) 5%, var(--ifm-color-blue) 40%, var(--ifm-color-pink) 90%);
+  --ifm-highlight-gradient-20: linear-gradient(150deg, var(--ifm-color-primary) 5%, var(--ifm-color-blue) 95%);
+  --ifm-hr-border-color: var(--ifm-contents-border-color);
+  --ifm-leading: calc(var(--ifm-leading-desktop) * 1em);
+  --ifm-line-height-base: 1.7;
+  --ifm-link-color: var(--ifm-color-primary-dark);
+  --ifm-menu-color: var(--ifm-color-emphasis-600);
+  --ifm-menu-link-padding-vertical: 0.35em;
+  --ifm-navbar-background-color: var(--ifm-background-color);
+  --ifm-navbar-link-color: var(--ifm-heading-color);
+  --ifm-navbar-logo-width: 155px;
+  --ifm-panel-background: var(--ifm-background-color);
+  --ifm-panel-background-rgb: 255, 255, 255;
+  --ifm-panel-background-solid: #FFFFFF;
+  --ifm-panel-background-active: rgba( var(--ifm-color-primary-rgb), 0.2 );
+  --ifm-panel-border-color: var(--ifm-hr-border-color);
+  --ifm-panel-border-color-active: var(--ifm-color-primary);
+  --ifm-panel-box-shadow: 0 0px 10px 0px var(--ifm-color-emphasis-50);
+  --ifm-panel-box-shadow-active: 0 0px 10px 0px rgba( var(--ifm-color-primary-rgb), 0.35 );
+  --ifm-panel-color: var(--ifm-color-emphasis-800);
+  --ifm-panel-color-active: var(--ifm-link-color);
+  --ifm-pre-line-height: var(--ifm-line-height-base);
+  --ifm-sidebar-background: var(--ifm-background-color);
+  --ifm-sidebar-border-color: var(--ifm-hr-border-color);
+  --ifm-sidebar-width: 250px;
+  --ifm-table-stripe-background: var(--ifm-table-background);
 }
+
+
+/**
+ * container
+ *
+ * A note about container sizes. The default container is 1140px. Our grid
+ * system is 12 columns wide. Therefore, we should increase and decrease
+ * sizes by 95px.
+ */
+
+ .container > *:first-child {
+  padding-left: 0 !important;
+}
+
+.container--flush {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.container--s {
+  box-sizing: border-box;
+  max-width: 950px;
+}
+
+.container--xs {
+  box-sizing: border-box;
+  max-width: 760px;
+}
+
+.container--m {
+  --ifm-container-width: 1235px;
+}
+
+.container--l {
+  --ifm-container-width: 1330px;
+}
+
+.container--l2 {
+  --ifm-container-width: 1425px;
+}
+
+.container--xl {
+  --ifm-container-width: 1520px;
+}
+
+/**
+ * domain-bg
+ */
+
+ .domain-bg {
+  background-image: url(/Document/img/nodes-bg-light.svg);
+}
+
+.domain-bg.domain-bg--config {
+  background-image: url(/Document/img/cogs-bg-light.svg);
+}
+
+.domain-bg.domain-bg--observability {
+  background-image: url(/Document/img/charts-bg-light.svg);
+}
+
+.domain-bg.domain-bg--operations {
+  background-image: url(/Document/img/circuit-bg-light.svg);
+}
+
+.domain-bg.domain-bg--vector {
+  background-image: url(/Document/img/vector-bg-light.svg);
+}
+
+.domain-bg--hover:not(:hover) {
+  background-image: none !important;
+}
+
+
+/**
+ * react-select-container
+ */
+
+ .react-select-container .react-select__control {
+  background: var(--ifm-panel-background);
+  border-color: var(--ifm-panel-border-color);
+  border-radius: var(--ifm-global-radius);
+  box-shadow: var(--ifm-panel-box-shadow);
+  box-sizing: border-box;
+  color: var(--ifm-font-base-color);
+}
+
+.react-select-container .react-select__indicator-separator {
+  background-color: var(--ifm-color-emphasis-200);
+}
+
+.react-select-container .react-select__single-value {
+  color: var(--ifm-font-base-color);
+}
+
+.react-select-container:hover .react-select__control {
+  background: var(--ifm-panel-background-active);
+  border-color: var(--ifm-panel-border-color-active);
+  box-shadow: var(--ifm-panel-box-shadow-active);
+}
+
+.react-select-container .react-select__menu {
+  background: var(--ifm-panel-background-solid);
+  border-radius: var(--ifm-global-radius);
+  color: var(--ifm-color-content);
+}
+
+.react-select-container .react-select__option:hover {
+  background: var(--ifm-color-primary);
+  color: var(--ifm-background-color);
+}
+
+.react-select-container .react-select__option--is-selected {
+  background: var(--ifm-panel-background-active) !important;
+  color: var(--ifm-color-primary) !important;
+  font-weight: bold;
+}
+
+.react-select-container .react-select__option--is-focused {
+  background: var(--ifm-panel-background-active);
+  color: var(--ifm-color-content);
+}
+
+.react-select-container .react-select__placeholder {
+  color: var(--ifm-color-content-secondary);
+}
+
+.react-select--lg {
+  font-size: 1.2em;
+}
+
+/**
+ * section
+ *
+ * Sections are generally used on marketing pages to focus on separate topics.
+ */
+
+section {
+  border-bottom: 1px solid var(--ifm-hr-border-color);
+  margin-bottom: calc( 2 * var(--ifm-leading) );
+  padding-bottom: calc( ( 2 * var(--ifm-leading) ) - var(--ifm-spacing-vertical) );
+}
+
+section .sub-title {
+  color: var(--ifm-color-emphasis-600);
+  font-size: 1.15em;
+  margin-top: calc( var(--ifm-heading-margin-bottom) * -0.9 );
+  margin-bottom: var(--ifm-heading-margin-bottom);
+}
+
+section.shade {
+  background: var(--ifm-panel-background);
+  padding-left: var(--ifm-spacing-horizontal);
+  padding-right: var(--ifm-spacing-horizontal);
+}
+
+section:last-child {
+  border-bottom: 0px none;
+  margin-bottom: 0;
+}
+
+header + section.shade {
+  margin-top: calc( -1 * (( var(--ifm-spacing-vertical) * 2 ) - 5px ));
+  padding-top: var(--ifm-spacing-vertical);
+}
+
 
 .docusaurus-highlight-code-line {
   background-color: rgb(72, 77, 91);
@@ -22,6 +269,7 @@
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
 }
+
 
 .hero {
   /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
@@ -32,4 +280,53 @@
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+}
+
+
+/******************************************************************************
+ * Dark Theme
+ ******************************************************************************/
+
+/**
+ * Root variables (dark)
+ */
+
+ html[data-theme="dark"] {
+  --ifm-background-color: #191927;
+  --ifm-background-color-rgb: 25, 25, 39;
+  --ifm-color-content-secondary: var(--ifm-color-emphasis-600);
+  --ifm-color-emphasis-25: var(--ifm-color-gray-975);
+  --ifm-color-emphasis-40: var(--ifm-color-gray-960);
+  --ifm-color-emphasis-50: var(--ifm-color-gray-950);
+  --ifm-color-emphasis-75: var(--ifm-color-gray-925);
+  --ifm-color-gray-25: rgba(224, 235, 247, calc( 1 - 0.025 ));
+  --ifm-color-gray-40: rgba(224, 235, 247, calc( 1 - 0.04 ));
+  --ifm-color-gray-50: rgba(224, 235, 247, calc( 1 - 0.05 ));
+  --ifm-color-gray-75: rgba(224, 235, 247, calc( 1 - 0.075 ));
+  --ifm-color-gray-100: rgba(224, 235, 247, calc( 1 - 0.1 ));
+  --ifm-color-gray-150: rgba(224, 235, 247, calc( 1 - 0.15 ));
+  --ifm-color-gray-200: rgba(224, 235, 247, calc( 1 - 0.2 ));
+  --ifm-color-gray-300: rgba(224, 235, 247, calc( 1 - 0.3 ));
+  --ifm-color-gray-400: rgba(224, 235, 247, calc( 1 - 0.4 ));
+  --ifm-color-gray-500: rgba(224, 235, 247, calc( 1 - 0.5 ));
+  --ifm-color-gray-600: rgba(224, 235, 247, calc( 1 - 0.6 ));
+  --ifm-color-gray-700: rgba(224, 235, 247, calc( 1 - 0.7 ));
+  --ifm-color-gray-800: rgba(224, 235, 247, calc( 1 - 0.8 ));
+  --ifm-color-gray-900: rgba(224, 235, 247, calc( 1 - 0.9 ));
+  --ifm-color-gray-925: rgba(224, 235, 247, calc( 1 - 0.925 ));
+  --ifm-color-gray-950: rgba(224, 235, 247, calc( 1 - 0.95 ));
+  --ifm-color-gray-960: rgba(224, 235, 247, calc( 1 - 0.96 ));
+  --ifm-color-gray-975: rgba(224, 235, 247, calc( 1 - 0.975 ));
+  --ifm-color-gray-1000: rgb(224, 235, 247);
+  --ifm-contents-border-color: var(--ifm-color-emphasis-75);
+  --ifm-global-shadow-md: 0 3px 8px 0px rgba(0, 0, 0, 0.2);
+  --ifm-heading-color: var(--ifm-color-gray-1000);
+  --ifm-link-color: var(--ifm-color-primary);
+  --ifm-navbar-search-input-icon: url('data:image/svg+xml;utf8,<svg fill="rgb(224, 235, 247)" alt="Search" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" height="16px" width="16px"><path d="M6.02945,10.20327a4.17382,4.17382,0,1,1,4.17382-4.17382A4.15609,4.15609,0,0,1,6.02945,10.20327Zm9.69195,4.2199L10.8989,9.59979A5.88021,5.88021,0,0,0,12.058,6.02856,6.00467,6.00467,0,1,0,9.59979,10.8989l4.82338,4.82338a.89729.89729,0,0,0,1.29912,0,.89749.89749,0,0,0-.00087-1.29909Z" /></svg>');
+  --ifm-panel-background: var(--ifm-color-emphasis-50);
+  --ifm-panel-background-rgb: 37, 37, 50;
+  --ifm-panel-background-solid: #252532;
+  --ifm-panel-background-solid-light: #323242;
+  --ifm-panel-box-shadow: none;
+  --ifm-panel-box-shadow-active: 0 0px 10px 0px rgba( var(--ifm-color-primary-rgb), 0.5 );
 }

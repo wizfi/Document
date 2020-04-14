@@ -1,18 +1,14 @@
-/**
- * Copyright (c) Facebook, Inc. and its affiliates.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
 import React from 'react';
+
+import Link from '@docusaurus/Link';
 import classnames from 'classnames';
 import {MDXProvider} from '@mdx-js/react';
 
-import Link from '@docusaurus/Link';
 import MDXComponents from '@theme/MDXComponents';
 
-import styles from './styles.module.css';
+import dateFormat from 'dateformat';
+
+import './styles.css';
 
 const MONTHS = [
   'January',
@@ -37,33 +33,24 @@ function BlogPostItem(props) {
     truncated,
     isBlogPostPage = false,
   } = props;
-  const {date, permalink, tags} = metadata;
+  const {date: dateString, description, permalink, tags} = metadata;
   const {author, title} = frontMatter;
-
+  const date = new Date(Date.parse(dateString));
   const authorURL = frontMatter.author_url || frontMatter.authorURL;
   const authorTitle = frontMatter.author_title || frontMatter.authorTitle;
   const authorImageURL =
     frontMatter.author_image_url || frontMatter.authorImageURL;
 
-  const renderPostHeader = () => {
-    const TitleHeading = isBlogPostPage ? 'h1' : 'h2';
-    const match = date.substring(0, 10).split('-');
-    const year = match[0];
-    const month = MONTHS[parseInt(match[1], 10) - 1];
-    const day = parseInt(match[2], 10);
-
     return (
-      <header>
-        <TitleHeading
-          className={classnames('margin-bottom--sm', styles.blogPostTitle)}>
-          {isBlogPostPage ? title : <Link to={permalink}>{title}</Link>}
-        </TitleHeading>
-        <div className="margin-bottom--sm">
-          <time dateTime={date} className={styles.blogPostDate}>
-            {month} {day}, {year}
-          </time>
-        </div>
-        <div className="avatar margin-bottom--md">
+      <Link to={permalink + '/'} className={classnames('blog-post-item', 'domain-bg', 'domain-bg--hover', 'domain-bg--vector')}>
+        <article>
+          <h2>{title}</h2>
+          
+          <div className="markdown">
+        <MDXProvider components={MDXComponents}>{children}</MDXProvider>
+      </div>
+          
+          <div className="avatar margin-bottom--md">
           {authorImageURL && (
             <a
               className="avatar__photo-link"
@@ -90,44 +77,30 @@ function BlogPostItem(props) {
             )}
           </div>
         </div>
-      </header>
-    );
-  };
 
-  return (
-    <article className={!isBlogPostPage ? 'margin-bottom--xl' : undefined}>
-      {renderPostHeader()}
-      <section className="markdown">
-        <MDXProvider components={MDXComponents}>{children}</MDXProvider>
-      </section>
-      {(tags.length > 0 || truncated) && (
-        <footer className="row margin-vert--lg">
-          {tags.length > 0 && (
-            <div className="col">
-              <strong>Tags:</strong>
-              {tags.map(({label, permalink: tagPermalink}) => (
-                <Link
-                  key={tagPermalink}
-                  className="margin-horiz--sm"
-                  to={tagPermalink}>
-                  {label}
-                </Link>
-              ))}
-            </div>
-          )}
-          {truncated && (
-            <div className="col text--right">
-              <Link
-                to={metadata.permalink}
-                aria-label={`Read more about ${title}`}>
-                <strong>Read More</strong>
-              </Link>
-            </div>
-          )}
-        </footer>
-      )}
-    </article>
-  );
+
+          <time dateTime={date.toISOString()}>{dateFormat(date, "mmm d, yyyy")} </time>
+          
+  
+              {tags.length > 0 && (
+                <div className="col">
+                  <strong>Tags:</strong>
+                  {tags.map(({label, permalink: tagPermalink}) => (
+                    <Link
+                      key={tagPermalink}
+                      className="margin-horiz--sm"
+                      to={tagPermalink}>
+                      {label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+
+              
+        </article>
+      </Link>
+    );
+
 }
 
 export default BlogPostItem;
