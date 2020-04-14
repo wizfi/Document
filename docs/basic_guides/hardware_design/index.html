@@ -13,28 +13,28 @@
 <link data-react-helmet="true" rel="shortcut icon" href="/Document/img/favicon.ico">
 
 
-<link rel="stylesheet" href="/Document/styles.bfca0a36.css">
+<link rel="stylesheet" href="/Document/styles.dd7341bd.css">
 
 
-<link rel="preload" href="/Document/styles.56eef39b.js" as="script">
+<link rel="preload" href="/Document/styles.f84e1df6.js" as="script">
 
-<link rel="preload" href="/Document/runtime~main.bb3d361f.js" as="script">
+<link rel="preload" href="/Document/runtime~main.aa6b12bc.js" as="script">
 
-<link rel="preload" href="/Document/main.5f87fadc.js" as="script">
+<link rel="preload" href="/Document/main.55876ce4.js" as="script">
 
-<link rel="preload" href="/Document/1.45a22477.js" as="script">
+<link rel="preload" href="/Document/1.a049b9c5.js" as="script">
 
-<link rel="preload" href="/Document/2.6d3d4c44.js" as="script">
+<link rel="preload" href="/Document/2.3da9868f.js" as="script">
 
-<link rel="preload" href="/Document/3.923d7204.js" as="script">
+<link rel="preload" href="/Document/3.c3f4b0fc.js" as="script">
 
-<link rel="preload" href="/Document/1be78505.dbafc11f.js" as="script">
+<link rel="preload" href="/Document/1be78505.7e8933b6.js" as="script">
 
 <link rel="preload" href="/Document/2d31042b.477be189.js" as="script">
 
-<link rel="preload" href="/Document/17896441.c0ab49ef.js" as="script">
+<link rel="preload" href="/Document/17896441.88a1754b.js" as="script">
 
-<link rel="preload" href="/Document/a6417ece.2c892328.js" as="script">
+<link rel="preload" href="/Document/a6417ece.01a5ae3b.js" as="script">
 
 </head>
 <body>
@@ -49,28 +49,28 @@ The power stabilizing capacitor (100nF) should be placed close to the VCC pin.</
 UART1 is the main communication UART. AT command communication is possible with UART1 and data communication is possible.</li><li>UART0 <br>
 UART0 is not available to normal users. This UART is used at the factory stage (Module production) and intended for internal firmware developers of the WizFi360.</li></ul><h3><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="etc"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#etc" title="Direct link to heading">#</a>ETC</h3><p>This session is an additional circuit guide for using the WizFi360. You don&#x27;t have to keep this session. But if you need it, you design it.</p><ul><li><strong>UART Flow Control</strong> <br>
 If you want to use UART Flow Control, you need to design a circuit as shown in Figure 3. PB9 is CTS1, PB10 is RTS1.</li></ul><p><img src="/Document/img/basic_guides/hardware_design/uart_flow_control.png" alt="Figure 4. UART Flow Control"></p><ul><li><strong>UART Level Shifter</strong> <br>
-The UART voltage on the WizFi360 is 3.3V. However, your MCU may not have a voltage of 3.3V. If so you need a Level Shifter to connect the WizFi360 to your MCU. You can design a Level Shifter circuit by referring to Figure 4. Connect your MCU’s UART voltage to the VCCIO at Figure 4.</li></ul><p><img src="/Document/img/basic_guides/hardware_design/uart_level_shifter.png" alt="Figure 5. UART Level Shifter"></p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="pcb-footprint"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#pcb-footprint" title="Direct link to heading">#</a>PCB Footprint</h2><p><img src="/Document/img/basic_guides/hardware_design/pcb_land_pattern.png" alt="Figure 6. Recommended PCB Land Pattern of WizFi360"></p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="pcb-layout"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#pcb-layout" title="Direct link to heading">#</a>PCB Layout</h2><ul><li>Power wiring width should not be less than 30mil.</li><li>Except for the antenna portion of WizFi360, the bottom layer of the shield can must have a GND plane.</li></ul><p><img src="/Document/img/basic_guides/hardware_design/gnd.png" alt="Figure 7. GND"></p><ul><li>Figures. 6 and Figures. 7 are 2 antenna placement which can best performance of antenna. We suggest customers to choose one of these 2 modes to design the placement. For the second placement mode, PCB antenna should be at least 5.0mm from both sides of the bottom board.</li></ul><p><img src="/Document/img/basic_guides/hardware_design/best_placement_1.png" alt="Figure 8. Best Placement 1"></p><p><img src="/Document/img/basic_guides/hardware_design/best_placement_2.png" alt="Figure 9. Best Placement 2"></p></div></article><div class="margin-vert--xl"><div class="row"><div class="col"><a href="https://github.com/wizfi/Document/tree/master/docs/basic_guides/hardware_design.md" target="_blank" rel="noreferrer noopener"><svg fill="currentColor" height="1.2em" width="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 40 40" style="margin-right:0.3em;vertical-align:sub"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div></div></div><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/Document/docs/basic_guides/mqtt_client"><h5 class="pagination-nav__link--sublabel">Previous</h5><h4 class="pagination-nav__link--label">« MQTT Client</h4></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/Document/docs/basic_guides/http_client"><h5 class="pagination-nav__link--sublabel">Next</h5><h4 class="pagination-nav__link--label">HTTP Client using WizFi360 »</h4></a></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"><ul class="contents contents__left-border"><li><a href="#overview" class="contents__link">Overview</a></li><li><a href="#pin-definition" class="contents__link">Pin definition</a><ul><li><a href="#initial-value-of-gpio-pins" class="contents__link">Initial value of GPIO Pins</a></li></ul></li><li><a href="#circuit" class="contents__link">Circuit</a><ul><li><a href="#system" class="contents__link">System</a></li><li><a href="#power" class="contents__link">Power</a></li><li><a href="#uart" class="contents__link">UART</a></li><li><a href="#etc" class="contents__link">ETC</a></li></ul></li><li><a href="#pcb-footprint" class="contents__link">PCB Footprint</a></li><li><a href="#pcb-layout" class="contents__link">PCB Layout</a></li></ul></div></div></div></div></div></main></div></div><footer class="footer footer--dark"><div class="container"><div class="row footer__links"><div class="col footer__col"><h4 class="footer__title">Docs</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" href="/Document/docs/intro">Getting Started</a></li><li class="footer__item"><a class="footer__link-item" href="/Document/docs/basic_guides/firmware_upgrade">Application guides</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Community</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" target="_blank" rel="noopener noreferrer" href="https://forum.wiznet.io">WIZnet Forum</a></li><li class="footer__item"><a class="footer__link-item" target="_blank" rel="noopener noreferrer" href="http://maker.wiznet.io/">WIZnet Maker</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Family Site</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" href="/Document/blog">Blog</a></li><li class="footer__item"><a class="footer__link-item" target="_blank" rel="noopener noreferrer" href="https://wiznet.io">WIZnet</a></li></ul></div></div><div class="text--center"><div>Copyright © 2020 WIZnet Co., Ltd. All Rights Reserved.</div></div></div></footer>
+The UART voltage on the WizFi360 is 3.3V. However, your MCU may not have a voltage of 3.3V. If so you need a Level Shifter to connect the WizFi360 to your MCU. You can design a Level Shifter circuit by referring to Figure 4. Connect your MCU’s UART voltage to the VCCIO at Figure 4.</li></ul><p><img src="/Document/img/basic_guides/hardware_design/uart_level_shifter.png" alt="Figure 5. UART Level Shifter"></p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="pcb-footprint"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#pcb-footprint" title="Direct link to heading">#</a>PCB Footprint</h2><p><img src="/Document/img/basic_guides/hardware_design/pcb_land_pattern.png" alt="Figure 6. Recommended PCB Land Pattern of WizFi360"></p><h2><a aria-hidden="true" tabindex="-1" class="anchor enhancedAnchor_ZqCz" id="pcb-layout"></a><a aria-hidden="true" tabindex="-1" class="hash-link" href="#pcb-layout" title="Direct link to heading">#</a>PCB Layout</h2><ul><li>Power wiring width should not be less than 30mil.</li><li>Except for the antenna portion of WizFi360, the bottom layer of the shield can must have a GND plane.</li></ul><p><img src="/Document/img/basic_guides/hardware_design/gnd.png" alt="Figure 7. GND"></p><ul><li>Figures. 6 and Figures. 7 are 2 antenna placement which can best performance of antenna. We suggest customers to choose one of these 2 modes to design the placement. For the second placement mode, PCB antenna should be at least 5.0mm from both sides of the bottom board.</li></ul><p><img src="/Document/img/basic_guides/hardware_design/best_placement_1.png" alt="Figure 8. Best Placement 1"></p><p><img src="/Document/img/basic_guides/hardware_design/best_placement_2.png" alt="Figure 9. Best Placement 2"></p></div></article><div class="margin-vert--xl"><div class="row"><div class="col"><a href="https://github.com/wizfi/Document/tree/master/docs/basic_guides/hardware_design.md" target="_blank" rel="noreferrer noopener"><svg fill="currentColor" height="1.2em" width="1.2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 40 40" style="margin-right:0.3em;vertical-align:sub"><g><path d="m34.5 11.7l-3 3.1-6.3-6.3 3.1-3q0.5-0.5 1.2-0.5t1.1 0.5l3.9 3.9q0.5 0.4 0.5 1.1t-0.5 1.2z m-29.5 17.1l18.4-18.5 6.3 6.3-18.4 18.4h-6.3v-6.2z"></path></g></svg>Edit this page</a></div></div></div><div class="margin-vert--lg"><nav class="pagination-nav"><div class="pagination-nav__item"><a class="pagination-nav__link" href="/Document/docs/basic_guides/mqtt_client"><h5 class="pagination-nav__link--sublabel">Previous</h5><h4 class="pagination-nav__link--label">« MQTT Client</h4></a></div><div class="pagination-nav__item pagination-nav__item--next"><a class="pagination-nav__link" href="/Document/docs/basic_guides/http_client"><h5 class="pagination-nav__link--sublabel">Next</h5><h4 class="pagination-nav__link--label">HTTP Client using WizFi360 »</h4></a></div></nav></div></div></div><div class="col col--3"><div class="tableOfContents_TbNY"><ul class="contents contents__left-border"><li><a href="#overview" class="contents__link">Overview</a></li><li><a href="#pin-definition" class="contents__link">Pin definition</a><ul><li><a href="#initial-value-of-gpio-pins" class="contents__link">Initial value of GPIO Pins</a></li></ul></li><li><a href="#circuit" class="contents__link">Circuit</a><ul><li><a href="#system" class="contents__link">System</a></li><li><a href="#power" class="contents__link">Power</a></li><li><a href="#uart" class="contents__link">UART</a></li><li><a href="#etc" class="contents__link">ETC</a></li></ul></li><li><a href="#pcb-footprint" class="contents__link">PCB Footprint</a></li><li><a href="#pcb-layout" class="contents__link">PCB Layout</a></li></ul></div></div></div></div></div></main></div></div><footer class="footer"><div class="container"><div class="row footer__links"><div class="col footer__col"><h4 class="footer__title">Docs</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" href="/Document/docs/intro">Getting Started</a></li><li class="footer__item"><a class="footer__link-item" href="/Document/docs/basic_guides/firmware_upgrade">Application guides</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Community</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" target="_blank" rel="noopener noreferrer" href="https://forum.wiznet.io">WIZnet Forum</a></li><li class="footer__item"><a class="footer__link-item" target="_blank" rel="noopener noreferrer" href="http://maker.wiznet.io/">WIZnet Maker</a></li></ul></div><div class="col footer__col"><h4 class="footer__title">Family Site</h4><ul class="footer__items"><li class="footer__item"><a class="footer__link-item" href="/Document/blog">Blog</a></li><li class="footer__item"><a class="footer__link-item" target="_blank" rel="noopener noreferrer" href="https://wiznet.io">WIZnet</a></li></ul></div></div><div class="text--center"><div>Copyright © 2020 WIZnet Co., Ltd. All Rights Reserved.</div></div></div></footer>
 </div>
 
-<script src="/Document/styles.56eef39b.js"></script>
+<script src="/Document/styles.f84e1df6.js"></script>
 
-<script src="/Document/runtime~main.bb3d361f.js"></script>
+<script src="/Document/runtime~main.aa6b12bc.js"></script>
 
-<script src="/Document/main.5f87fadc.js"></script>
+<script src="/Document/main.55876ce4.js"></script>
 
-<script src="/Document/1.45a22477.js"></script>
+<script src="/Document/1.a049b9c5.js"></script>
 
-<script src="/Document/2.6d3d4c44.js"></script>
+<script src="/Document/2.3da9868f.js"></script>
 
-<script src="/Document/3.923d7204.js"></script>
+<script src="/Document/3.c3f4b0fc.js"></script>
 
-<script src="/Document/1be78505.dbafc11f.js"></script>
+<script src="/Document/1be78505.7e8933b6.js"></script>
 
 <script src="/Document/2d31042b.477be189.js"></script>
 
-<script src="/Document/17896441.c0ab49ef.js"></script>
+<script src="/Document/17896441.88a1754b.js"></script>
 
-<script src="/Document/a6417ece.2c892328.js"></script>
+<script src="/Document/a6417ece.01a5ae3b.js"></script>
 
 
 </body>
