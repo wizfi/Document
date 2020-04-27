@@ -9,8 +9,9 @@
     "deploy": "docusaurus deploy"
   },
   "dependencies": {
-    "@docusaurus/core": "^2.0.0-alpha.48",
-    "@docusaurus/preset-classic": "^2.0.0-alpha.48",
+    "@babel/plugin-transform-runtime": "^7.9.0",
+    "@docusaurus/core": "2.0.0-alpha.50",
+    "@docusaurus/preset-classic": "2.0.0-alpha.50",
     "classnames": "^2.2.6",
     "dateformat": "^3.0.3",
     "docusaurus": "^1.14.4",

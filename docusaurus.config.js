@@ -7,13 +7,20 @@ module.exports = {
   organizationName: 'wizfi', // Usually your GitHub org/user name.
   projectName: 'Document', // Usually your repo name.
   themeConfig: {
+    announcementBar: {
+      id: 'supportus',
+      content:
+        '⭐️ If you like WizFi modules, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/wizfi">GitHub</a>! ⭐️',
+      textColor: '#fafbfc',
+    },
+    
     algolia: {
       apiKey: '07f8cbc0d0a5ef7b848bfcf27fc1197f',
       indexName: 'wizfi',
       algoliaOptions: {}, // Optional, if provided by Algolia
     },
     navbar: {
-      title: 'WizFi360',
+      // title: 'WizFi360',
       logo: {
         alt: 'My Site Logo',
         src: 'img/wizfi.png',
@@ -21,9 +28,18 @@ module.exports = {
       
       links: [
         {
-          to: 'docs/intro',
           label: 'Docs',
           position: 'left',
+          items: [
+            {
+              label: 'WizFi360',
+              to: 'docs/intro'
+            },
+            {
+              label: 'WizFi630',
+              to: ''
+            }
+          ]
         },
         {to: 'blog', label: 'Blog', position: 'left'},
         {href: 'https://wiznet.io', label: 'Where to Buy', position: 'left'},
