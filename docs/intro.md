@@ -16,7 +16,7 @@ WizFi360-CON             |  WizFi360-PA
 WizFi360 is a low cost and low-power consumption industrial-grade WiFi
 module. It is compatible with IEEE802.11 b/g/n standard and supports
 SoftAP, Station and SoftAP+Station modes. The serial port baud rate can
-be up to 2Mbps, which can meet the requirement of various applications.
+be up to 2Mbps, which can meet requirements of various applications.
 
 ## Features
 
