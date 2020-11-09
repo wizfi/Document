@@ -25,15 +25,12 @@ keywords:
 
 - [**Sign to console**][Link-AWS-Console]
 - [**Create a thing**][Link-create-thing]
-- [**Create certificate**][Link-create-certi]
+- [**Create a policy**][Link-create-policy]
 :::important
  Save certificates and key during creation.
 ![](/Document/img/aws_cloud/sdk-attach-policy.png)
 AWS root CA can be downloaded from [**here**][link-aws-ca]
 :::
-- [**Create a policy**][Link-create-policy]
-- [**Attach policy to certificate**][Link-attach-policy]
-- [**Attach certificate to a thing**][Link-attach-certi]
 
 </details>
 
@@ -237,9 +234,9 @@ Below is screenshot from terminal
 WizFi360 is successfully connected to AWS!
 
 [Link-AWS-Console]: https://aws.amazon.com/ko/console/
-[Link-create-thing]: https://docs.aws.amazon.com/iot/latest/developerguide/create-aws-thing.html
+[Link-create-thing]: https://docs.aws.amazon.com/iot/latest/developerguide/create-iot-resources.html#create-aws-thing
 [Link-create-certi]: https://docs.aws.amazon.com/iot/latest/developerguide/create-device-certificate.html
-[Link-create-policy]: https://docs.aws.amazon.com/iot/latest/developerguide/create-iot-policy.html
+[Link-create-policy]: https://docs.aws.amazon.com/iot/latest/developerguide/create-iot-resources.html#create-iot-policy
 [Link-attach-policy]: https://docs.aws.amazon.com/iot/latest/developerguide/attach-policy-to-certificate.html
 [Link-attach-certi]: https://docs.aws.amazon.com/iot/latest/developerguide/attach-cert-thing.html
 [WizFi360]: https://wizwiki.net/wiki/doku.php/products:wizfi360:start

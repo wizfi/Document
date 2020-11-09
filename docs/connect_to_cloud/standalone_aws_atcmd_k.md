@@ -25,15 +25,13 @@ keywords:
 
 - [**AWS Console에 로그인**][Link-AWS-Console]
 - [**사물 생성**][Link-create-thing]
-- [**인증서 생성**][Link-create-certi]
+- [**정책 생성**][Link-create-policy]
 :::important
  Certificate 생성할때 꼭 인증서를 다운해야됩니다.
 ![](/Document/img/aws_cloud/sdk-attach-policy.png)
 AWS root CA [**여기서**][link-aws-ca] 다운로드 할 수 있습니다.
 :::
-- [**정책 생성**][Link-create-policy]
-- [**디바이스 인증서에 정책 연결**][Link-attach-policy]
-- [**사물에 인증서 연결**][Link-attach-certi]
+
 
 </details>
 
@@ -237,9 +235,9 @@ AWS IoT -> 관리 -> 사물 -> **사물 이름** -> 상호 작용.<br />
 
 [Link-AWS-Console]: https://aws.amazon.com/ko/console/
 [Link-create-thing]: https://docs.aws.amazon.com/iot/latest/developerguide/create-aws-thing.html
+[Link-create-thing]: https://docs.aws.amazon.com/iot/latest/developerguide/create-iot-resources.html#create-aws-thing
 [Link-create-certi]: https://docs.aws.amazon.com/iot/latest/developerguide/create-device-certificate.html
-[Link-create-policy]: https://docs.aws.amazon.com/iot/latest/developerguide/create-iot-policy.html
-[Link-attach-policy]: https://docs.aws.amazon.com/iot/latest/developerguide/attach-policy-to-certificate.html
+[Link-create-policy]: https://docs.aws.amazon.com/iot/latest/developerguide/create-iot-resources.html#create-iot-policy
 [Link-attach-certi]: https://docs.aws.amazon.com/iot/latest/developerguide/attach-cert-thing.html
 [WizFi360]: https://wizwiki.net/wiki/doku.php/products:wizfi360:start
 [WizFi360-EVB-Shield]: https://wizwiki.net/wiki/doku.php/products:wizfi360:board:wizfi360-evb:start
