@@ -141,6 +141,8 @@ Syntax:
 :::important
 Before connection to AWS certificates, MQTTTOPIC and MQTTSET shall be set.<br />
 Otherwise AT+AWSCON will return error.
+
+Please note that AWSCON will return error when CIPMUX is set to 1.
 :::
 
 ## Connection procedure

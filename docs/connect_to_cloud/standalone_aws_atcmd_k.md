@@ -142,6 +142,8 @@ Syntax:
 :::important
 AWS에 접속하기 전에 certificates, MQTTTOPIC and MQTTSET 세팅 해야 됩니다.<br />
 그렇지 않으면 AT+AWSCON에서 오류가 반환됩니다.
+
+CIPMUX=1 사용시 AWSCON에서 오류가 반환됩니다.
 :::
 
 ## 동작 예제
