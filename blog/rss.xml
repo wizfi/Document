@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>WizFi360 Blog</title>
+        <link>https://wizfi.github.io/blog</link>
+        <description>WizFi360 Blog</description>
+        <lastBuildDate>Tue, 29 Oct 2019 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[WizFi360 is Microsoft Azure Certified for IoT]]></title>
+            <link>https://wizfi.github.io/Document/blog/2019/10/29/azure</link>
+            <guid>WizFi360 is Microsoft Azure Certified for IoT</guid>
+            <pubDate>Tue, 29 Oct 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[WIZnet collaborates with Microsoft to accelerate Internet of Things solutions.]]></description>
+        </item>
+    </channel>
+</rss>
