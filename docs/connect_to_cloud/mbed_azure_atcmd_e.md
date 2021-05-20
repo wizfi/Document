@@ -37,7 +37,7 @@ For Azure IoT Hub setup and IoT device creation please refer to [Azure Cloud Int
 
 For this guide [WizFi360-EVB-Shield] Evaluation board was used.
 
-![](/Document/img/azure_cloud/mqtt_atcmd_wizfi360_required_item_1.png)
+![](/img/azure_cloud/mqtt_atcmd_wizfi360_required_item_1.png)
 
 ## Device preparation
 
@@ -51,7 +51,7 @@ WizFi360-EVB-Shield will be installed on top of NUCLEO-L476RG. Therefore DIP Swi
 > * D2 : UART Tx
 > * D8 : UART Rx
 
-![](/Document/img/azure_cloud/mqtt_atcmd_wizfi360_required_item_2.png)
+![](/img/azure_cloud/mqtt_atcmd_wizfi360_required_item_2.png)
 
 
 
@@ -225,7 +225,7 @@ After **Sample Download**, open and launch project in **File** > **Open Workspac
 Sample code also can be imported into Online Compiler from following link:
 
 > https://os.mbed.com/users/vikshin/code/Mbed-Azure-Atcmd-WizFi360/
-![](/Document/img/azure_cloud/Mbed_Azure_online_compiler.JPG)
+![](/img/azure_cloud/Mbed_Azure_online_compiler.JPG)
 
 ### Modify parameters
 
@@ -248,7 +248,7 @@ Press **Run Program** to build and run project.
 ![][Link-Execute_Project_Through_Mbed_Studio_3]
 
 Use Serial monitor to check if code was successfully uploaded to Nucleo board.
-![](/Document/img/azure_cloud/Mbed_Azure_atcmd_serial_monitor.JPG)
+![](/img/azure_cloud/Mbed_Azure_atcmd_serial_monitor.JPG)
 
 
 ### Results
@@ -257,7 +257,7 @@ Use Serial monitor to check if code was successfully uploaded to Nucleo board.
 > "Start" button shall be pressed before sending data using MQTTPUB commands.
 2. Check data sent with MQTTPUB command.
 
-![](/Document/img/azure_cloud/Mbed_Azure_atcmd_iot_explorer.JPG)
+![](/img/azure_cloud/Mbed_Azure_atcmd_iot_explorer.JPG)
 
 [press here]: https://azure.microsoft.com/ko-kr/free/
 [Azure Portal]: https://portal.azure.com/

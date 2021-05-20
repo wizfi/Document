@@ -146,23 +146,23 @@
  */
 
  .domain-bg {
-  background-image: url(/Document/img/nodes-bg-light.svg);
+  background-image: url(/img/nodes-bg-light.svg);
 }
 
 .domain-bg.domain-bg--config {
-  background-image: url(/Document/img/cogs-bg-light.svg);
+  background-image: url(/img/cogs-bg-light.svg);
 }
 
 .domain-bg.domain-bg--observability {
-  background-image: url(/Document/img/charts-bg-light.svg);
+  background-image: url(/img/charts-bg-light.svg);
 }
 
 .domain-bg.domain-bg--operations {
-  background-image: url(/Document/img/circuit-bg-light.svg);
+  background-image: url(/img/circuit-bg-light.svg);
 }
 
 .domain-bg.domain-bg--vector {
-  background-image: url(/Document/img/vector-bg-light.svg);
+  background-image: url(/img/vector-bg-light.svg);
 }
 
 .domain-bg--hover:not(:hover) {
@@ -273,7 +273,7 @@ header + section.shade {
 
 .hero {
   /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-  background-image: url("/Document/img/img_slide1_bg.jpg");
+  background-image: url("/img/img_slide1_bg.jpg");
 
   /* Position and center the image to scale nicely on all screens */
   background-position: center;

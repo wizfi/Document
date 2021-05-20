@@ -9,19 +9,24 @@
     "deploy": "docusaurus deploy"
   },
   "dependencies": {
-    "@babel/plugin-transform-runtime": "^7.9.0",
-    "@docusaurus/core": "2.0.0-alpha.50",
-    "@docusaurus/preset-classic": "2.0.0-alpha.50",
+    "@docusaurus/core": "^2.0.0-beta.0",
+    "@docusaurus/preset-classic": "^2.0.0-beta.0",
+    "@mdx-js/react": "^1.6.21",
+    "@svgr/webpack": "^5.5.0",
     "classnames": "^2.2.6",
+    "clsx": "^1.1.1",
     "dateformat": "^3.0.3",
-    "docusaurus": "^1.14.4",
-    "node-pre-gyp": "^0.14.0",
-    "react": "^16.8.4",
-    "react-dom": "^16.8.4"
+    "file-loader": "^6.2.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "url-loader": "^4.1.1"
   },
+  "devDependencies": {
+    "glob-promise": "^3.4.0"
+  }, 
   "browserslist": {
     "production": [
-      ">0.2%",
+      ">0.5%",
       "not dead",
       "not op_mini all"
     ],

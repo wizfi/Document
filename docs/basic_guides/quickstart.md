@@ -12,17 +12,17 @@ There are two types of WizFi360-EVB, which can be classified as ‘Shield’ and
 
 WizFi360-EVB-Mini|  WizFi360-EVB-Shield
 :-------------------------:|:-------------------------:|
-![WizFi360-CON](/Document/img/WizFi360-mini.png) | ![WizFi360-PA](/Document/img/img_evb_mini.png)|
+![WizFi360-CON](/img/WizFi360-mini.png) | ![WizFi360-PA](/img/img_evb_mini.png)|
 
 In addition, WizFi360-EVB-Shield is Pin compatible with Arduino. So you can use UART in two cases. If you use Micro USB, turn SW1 ON and connect Micro USB. In case of using Arduino H/W compatible pin, turn SW1 OFF and select RXD / TXD pin for Arduino using jumper cap. See the figure below.
 
 | Micro USB | Arduino H/W compatible pin | 
 :-------------------------:|:-------------------------:|
-![WizFi360-CON](/Document/img/basic_guides/quickstart/quickstart_microusb.png) | ![WizFi360-PA](/Document/img/basic_guides/quickstart/quickstart_arduino.png)|
+![WizFi360-CON](/img/basic_guides/quickstart/quickstart_microusb.png) | ![WizFi360-PA](/img/basic_guides/quickstart/quickstart_arduino.png)|
 
 If WizFi360-EVB-Shield or WizFi360-EVB-Mini is connected to a PC with a Mini USB Cable, run the serial program for UART communication on the PC. Open Port in Serial Program and input AT. If WizFi360 return OK, AT command can be used.
 
-![](/Document/img/basic_guides/quickstart/quickstart_terminal.png)
+![](/img/basic_guides/quickstart/quickstart_terminal.png)
 
 ## TCP CLient Example
 

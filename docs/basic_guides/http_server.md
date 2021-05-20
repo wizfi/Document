@@ -17,7 +17,7 @@ This document uses Arduino Mega2560 and WizFi360-EVB-Shield. To communicate with
 
 You can also use D0 ~ D8 Pin as TXD / RXD Pin by using UART Select Pin header. If you use it, you can connect without Wiring by placing WizFi360-EVB-Shield on Arduino. 
 
-![](/Document/img/basic_guides/http_client/http_client.png)
+![](/img/basic_guides/http_client/http_client.png)
 
 ## Library download
 
@@ -29,7 +29,7 @@ Download the library from [Github](https://github.com/wizfi/WizFi360EVB-Arduino)
 
 Launch Arduino and Open the WebServer example as shown below.
 
-![](/Document/img/basic_guides/http_server/http_server_arduino_ide.png)
+![](/img/basic_guides/http_server/http_server_arduino_ide.png)
 
 ### Code
 
@@ -37,11 +37,11 @@ Update your AP credentials (SSID and password) to connect WizFi360.
 Serial1 is the serial communicating with Arduino and WizFi360 and should have the same baud rate as WizFi360. The factory default baud rate for WizFi360 is 115200, and if you have not changed it, enter 115200.
 Enter the address of the HTTP server to connect to server. You can enter ip address or domain address. In this case, connect to arduino.cc.
 
-![](/Document/img/basic_guides/http_server/http_server_code.png)
+![](/img/basic_guides/http_server/http_server_code.png)
 
 Arduino (WizFi360-EVB-Shield) transmits the following HTML data when Web client connects. If you want to send other data, you can modify it below.
 
-![](/Document/img/basic_guides/http_server/http_server_code_1.png)
+![](/img/basic_guides/http_server/http_server_code_1.png)
 
 ### Result
 
@@ -52,4 +52,4 @@ Arduino (WizFi360-EVB-Shield) transmits the following HTML data when Web client 
 5. HTML data sent to client.
 
 
-![](/Document/img/basic_guides/http_server/http_server_result.png)
+![](/img/basic_guides/http_server/http_server_result.png)

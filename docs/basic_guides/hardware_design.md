@@ -17,7 +17,7 @@ This document includes a reference circuit diagram and a PCB guide.
 
 Figure 1. WizFi360 Pinout
 
-![](/Document/img/basic_guides/spi_guide/wizfi360_pinout.png)
+![](/img/basic_guides/spi_guide/wizfi360_pinout.png)
 
 Table 1. Pin Definitions
 
@@ -76,7 +76,7 @@ This is the initial value of GPIO when using AT command to use GPIO on WizFi360.
 
 The WizFi360 has a very simple circuit. You can connect power to the WizFi360 and send and receive data through UART1. Please pay attention to four pins.
 
-![Figure 2. Reference Schematic](/Document/img/basic_guides/hardware_design/reference_schematic.png)
+![Figure 2. Reference Schematic](/img/basic_guides/hardware_design/reference_schematic.png)
 
 -	**Reset** <br />
 Reset circuit offers to design with RC circuit. WizFi360 reset automatically by low level power. If RESET pin controlled by external circuit, the WizFi360 will reset when the level is below 2.0V. The low level needs to last more than 100µs.
@@ -94,7 +94,7 @@ The power stabilizing capacitor (100nF) should be placed close to the VCC pin.
 
 ### UART
 
-![Figure 3. UART](/Document/img/basic_guides/hardware_design/uart.png)
+![Figure 3. UART](/img/basic_guides/hardware_design/uart.png)
 
 -	UART1 <br />
 UART1 is the main communication UART. AT command communication is possible with UART1 and data communication is possible.
@@ -108,26 +108,26 @@ This session is an additional circuit guide for using the WizFi360. You don't ha
 - **UART Flow Control** <br />
 If you want to use UART Flow Control, you need to design a circuit as shown in Figure 3. PB9 is CTS1, PB10 is RTS1.
 
-![Figure 4. UART Flow Control](/Document/img/basic_guides/hardware_design/uart_flow_control.png)
+![Figure 4. UART Flow Control](/img/basic_guides/hardware_design/uart_flow_control.png)
 
 - **UART Level Shifter** <br />
 The UART voltage on the WizFi360 is 3.3V. However, your MCU may not have a voltage of 3.3V. If so you need a Level Shifter to connect the WizFi360 to your MCU. You can design a Level Shifter circuit by referring to Figure 4. Connect your MCU’s UART voltage to the VCCIO at Figure 4.
 
-![Figure 5. UART Level Shifter](/Document/img/basic_guides/hardware_design/uart_level_shifter.png)
+![Figure 5. UART Level Shifter](/img/basic_guides/hardware_design/uart_level_shifter.png)
 
 ## PCB Footprint
 
-![Figure 6. Recommended PCB Land Pattern of WizFi360](/Document/img/basic_guides/hardware_design/pcb_land_pattern.png)
+![Figure 6. Recommended PCB Land Pattern of WizFi360](/img/basic_guides/hardware_design/pcb_land_pattern.png)
 
 ## PCB Layout
 
 -	Power wiring width should not be less than 30mil.
 -	Except for the antenna portion of WizFi360, the bottom layer of the shield can must have a GND plane.
 
-![Figure 7. GND](/Document/img/basic_guides/hardware_design/gnd.png)
+![Figure 7. GND](/img/basic_guides/hardware_design/gnd.png)
 
 -	Figures. 6 and Figures. 7 are 2 antenna placement which can best performance of antenna. We suggest customers to choose one of these 2 modes to design the placement. For the second placement mode, PCB antenna should be at least 5.0mm from both sides of the bottom board.
 
-![Figure 8. Best Placement 1](/Document/img/basic_guides/hardware_design/best_placement_1.png)
+![Figure 8. Best Placement 1](/img/basic_guides/hardware_design/best_placement_1.png)
 
-![Figure 9. Best Placement 2](/Document/img/basic_guides/hardware_design/best_placement_2.png)
+![Figure 9. Best Placement 2](/img/basic_guides/hardware_design/best_placement_2.png)

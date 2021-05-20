@@ -18,7 +18,7 @@ export const Highlight = ({children, color}) => ( <span style={{
 
 In this guide we introduce Airkiss method to configure WizFi360.
 
-![](/Document/img/basic_guides/airkiss/airkiss_diagran.png)
+![](/img/basic_guides/airkiss/airkiss_diagran.png)
 
 ## Airkiss sequence
 
@@ -54,7 +54,7 @@ This procedure is simple and contains following steps:
 3. Wait while WizFi360 is connected to AP.
 4. Upon completion app will display MAC and IP addresses.
 
-![](/Document/img/basic_guides/airkiss/airkiss_android_app.png)
+![](/img/basic_guides/airkiss/airkiss_android_app.png)
 
 ### TCP Client Test
 
@@ -67,6 +67,6 @@ To conduct test follow below procedures:
 3. Input a message and press "Send" button.
 4. App will display message on the screen when it is received from server.
 
-![](/Document/img/basic_guides/airkiss/airkiss_android_tcp.png)
+![](/img/basic_guides/airkiss/airkiss_android_tcp.png)
 
 

@@ -27,7 +27,7 @@ Connect UartToUsb to WizFi360 evaluation board as below:
 - WizFi360 3v3 → UartToUSB VCC
 - WizFi360 GND → UartToUSB GND
 
-![](/Document/img/basic_guides/arduino_ide/arduino_ide_setup.jpg)
+![](/img/basic_guides/arduino_ide/arduino_ide_setup.jpg)
 
 ### Software
 
@@ -42,34 +42,34 @@ Arduino IDE version was "LAST UPDATE 25 March 2020 23:34:57 GMT" at the moment o
 
 1. Open Preferences in Arduino IDE.
 
-![](/Document/img/basic_guides/arduino_ide/arduino_ide_preferences.png)   
+![](/img/basic_guides/arduino_ide/arduino_ide_preferences.png)   
 
 2. In preferences window set compiler warnings to "All". Also check all items except "Use external editor".<br />Add http://wizwiki.net/download/WizFi360/arduino/package_WizFi360_index.json to board manager URL.
 
-![](/Document/img/basic_guides/arduino_ide/arduino_ide_preferences_1.png) 
+![](/img/basic_guides/arduino_ide/arduino_ide_preferences_1.png) 
 
 3. Open board manager from Tools menu.
 
-![](/Document/img/basic_guides/arduino_ide/arduino_ide_board_manager.png) 
+![](/img/basic_guides/arduino_ide/arduino_ide_board_manager.png) 
 
 4. Search for WizFi360 in boards manager and install latest version.
 
-![](/Document/img/basic_guides/arduino_ide/arduino_ide_board_manager_1.png) 
+![](/img/basic_guides/arduino_ide/arduino_ide_board_manager_1.png) 
 
 5. Select WizFi360-EVB-Mini or Shield in Tools -> Board menu.
 
-![](/Document/img/basic_guides/arduino_ide/arduino_ide_board_manager_2.png) 
+![](/img/basic_guides/arduino_ide/arduino_ide_board_manager_2.png) 
 
 6. Set upload speed to 2000000 and check COM port.
 
-![](/Document/img/basic_guides/arduino_ide/arduino_ide_board_manager_3.png) 
+![](/img/basic_guides/arduino_ide/arduino_ide_board_manager_3.png) 
 
 7. Open example from File -> Examples
 
-![](/Document/img/basic_guides/arduino_ide/arduino_ide_example.png) 
+![](/img/basic_guides/arduino_ide/arduino_ide_example.png) 
 
 8. Compile and upload.
 
-![](/Document/img/basic_guides/arduino_ide/arduino_ide_upload.png) 
+![](/img/basic_guides/arduino_ide/arduino_ide_upload.png) 
 
 **Congratulations! Process is completed!**

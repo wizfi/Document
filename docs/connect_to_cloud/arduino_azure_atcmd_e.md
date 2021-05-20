@@ -37,7 +37,7 @@ For Azure IoT Hub setup and IoT device creation please refer to [Azure Cloud Int
 
 For this guide [WizFi360-EVB-Shield] Evaluation board was used.
 
-![](/Document/img/azure_cloud/mqtt_atcmd_wizfi360_required_item_1.png)
+![](/img/azure_cloud/mqtt_atcmd_wizfi360_required_item_1.png)
 
 ## Device preparation
 
@@ -45,7 +45,7 @@ For this guide [WizFi360-EVB-Shield] Evaluation board was used.
 
 In this guide we will use Arduino Mega2560 and WizFi360-EVB-SHield. In Arduino Code we will use UART1 for ocmmunication with WizFi360-EVB-Shield. To do so we need to connect TX1, RX1 pins of Arduino board with RXD and TXD pins of WizFi360-EVB-Shield. Also, switch RXD/TXD Selector OFF in order to enable communication through pin not USB.
 
-![](/Document/img/azure_cloud/Arduino_Azure_atcmd_wizfi360_connection_new.png)
+![](/img/azure_cloud/Arduino_Azure_atcmd_wizfi360_connection_new.png)
 
 To use DHT11 sensor from WizFi360-EVB-Shield connect D14 pin on EVB board to D14 pin on Arduino Mega.
 
@@ -53,7 +53,7 @@ To use DHT11 sensor from WizFi360-EVB-Shield connect D14 pin on EVB board to D14
 
 After configuring hardware connect Arduino Mega2560 board with PC. CHeck port number in Device Manager.
 
-![](/Document/img/azure_cloud/Arduino_Azure_atcmd_device_manager_port.png)
+![](/img/azure_cloud/Arduino_Azure_atcmd_device_manager_port.png)
 
 > If everything setup correctly, then COM port can be checked in Device manager as shown on picture above.
 
@@ -229,17 +229,17 @@ char DevicePrimaryKey[] = "XXXXXXXXXXXXXXXXXX";
 
 As shown on below picture, check your board & port, then compile code.
 
-![](/Document/img/azure_cloud/Arduino_Azure_atcmd_ide_port_check.png)
+![](/img/azure_cloud/Arduino_Azure_atcmd_ide_port_check.png)
 
-![](/Document/img/azure_cloud/Arduino_Azure_atcmd_ide_board_check.png)
+![](/img/azure_cloud/Arduino_Azure_atcmd_ide_board_check.png)
 
 When compile is done, upload to board. When upload is done, you will see 'avrdude done. Thank you.' message. 
 
-![](/Document/img/azure_cloud/Arduino_Azure_atcmd_ide_upload.png)
+![](/img/azure_cloud/Arduino_Azure_atcmd_ide_upload.png)
 
 Use Serial monitor to check if code was successfully uploaded to Adruino Mega2560 board.
 
-![](/Document/img/azure_cloud/Arduino_Azure_atcmd_serial_monitor_results.JPG)
+![](/img/azure_cloud/Arduino_Azure_atcmd_serial_monitor_results.JPG)
 
 
 ### Results
@@ -248,7 +248,7 @@ Use Serial monitor to check if code was successfully uploaded to Adruino Mega256
 > "Start" button shall be pressed before sending data using MQTTPUB commands.
 2. Check data sent with MQTTPUB command.
 
-![](/Document/img/azure_cloud/Arduino_Azure_atcmd_IoT_Explorer_results.JPG)
+![](/img/azure_cloud/Arduino_Azure_atcmd_IoT_Explorer_results.JPG)
 
 
 

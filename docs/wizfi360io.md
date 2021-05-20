@@ -12,13 +12,13 @@ This page describes the io interface boards using WizFi360. WizFi360io series bo
 
 ## WizFi360io-C
 
-![WizFi360io-C](/Document/img/wizfi360io-c.png)
+![WizFi360io-C](/img/wizfi360io-c.png)
 
 WizFi360io-C cable connector type io interface board. The operating voltage of the WizFi360io-C and the UART voltage are 5V. WizFi360io-C can connect the UART interface to the connector. The part name of the connector mounted on WizFi360io-C is “SMW200-06”. The cable connector that can be connected to “SMW200-06” is “SMH200-06”.
 
 ## WizFi360io-H
 
-![WizFi360io-H](/Document/img/wizfi360-h.png)
+![WizFi360io-H](/img/wizfi360-h.png)
 
 WizFi360io-H is a pin header type io interface board. The form factor of WizFi360io is an Xbee interface module. 2.00mm pin header is used, similar to the Xbee pin layout. But it is not exactly compatible.
 

@@ -44,7 +44,7 @@ For Azure IoT Hub setup and IoT device creation please refer to [Azure Cloud Int
 
 For this guide [WizFi360-EVB-Shield] Evaluation board was used.
 
-![](/Document/img/azure_cloud/mqtt_atcmd_wizfi360_required_item_1.png)
+![](/img/azure_cloud/mqtt_atcmd_wizfi360_required_item_1.png)
 
 ## Device preparation
 
@@ -56,7 +56,7 @@ WizFi360-EVB-Shield will be used in **Standalone mode**. Therefore DIP Switch an
 > * SW2 : Off
 > * SW3 : Off
 
-![](/Document/img/azure_cloud/WizFi360EVB_SW1.JPG)
+![](/img/azure_cloud/WizFi360EVB_SW1.JPG)
 
 ### Device connection
 
@@ -64,7 +64,7 @@ After connecting hardware, connect WizFi360-EVB-Shield to Desktop or Laptop usin
 
 Check **COM Port** from **Device Manager**.
 
-![](/Document/img/azure_cloud/DeviceManager.JPG)
+![](/img/azure_cloud/DeviceManager.JPG)
 
 > If COM port cannot be found in Device manager, check drivers from link below.
   - [Silicon Labs CP210x USB to UART Driver]
@@ -283,7 +283,7 @@ For connection use following configuration in terminal: 115200-8-N-1, None.
 |:--------|:--------|
 | AT+MQTTPUB="{"deviceId":"WizFi360","temperature":28.16,"humidity":46.04}" | OK |
 
-![](/Document/img/azure_cloud/Token2Shell.jpg)
+![](/img/azure_cloud/Token2Shell.jpg)
 
 ### Results
 
@@ -291,7 +291,7 @@ For connection use following configuration in terminal: 115200-8-N-1, None.
 > "Start" button shall be pressed before sending data using MQTTPUB commands.
 2. Check data sent with MQTTPUB command.
 
-![](/Document/img/azure_cloud/azure_iot_explorer.png)
+![](/img/azure_cloud/azure_iot_explorer.png)
 
 
 [Link-Azure-Portal]: https://portal.azure.com/

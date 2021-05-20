@@ -7,7 +7,7 @@ keywords:
     - WizFi360-EVB-Mini
 ---
 
-![WizFi360-EVB-Mini](/Document/img/wizfi360-mini3.png)
+![WizFi360-EVB-Mini](/img/wizfi360-mini3.png)
 
 ## Overview
 

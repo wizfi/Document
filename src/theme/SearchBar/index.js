@@ -58,7 +58,7 @@ const Search = props => {
       return;
     }
 
-    Promise.all([import('docsearch.js'), import('./algolia.css')]).then(
+    Promise.all([import('./algolia.css')]).then(
       ([{default: docsearch}]) => {
         setAlgoliaLoaded(true);
         window.docsearch = docsearch;

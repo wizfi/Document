@@ -12,8 +12,7 @@ module.exports = {
       content:
         '⭐️ If you like WizFi modules, give it a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/wizfi">GitHub</a>! ⭐️',
       textColor: '#fafbfc',
-    },
-    
+    },  
     algolia: {
       apiKey: '07f8cbc0d0a5ef7b848bfcf27fc1197f',
       indexName: 'wizfi',
@@ -26,7 +25,7 @@ module.exports = {
         src: 'img/wizfi.png',
       },
       
-      links: [
+      items: [
         {
           label: 'Docs',
           position: 'left',
@@ -35,10 +34,10 @@ module.exports = {
               label: 'WizFi360',
               to: 'docs/intro'
             },
-            {
-              label: 'WizFi630',
-              to: ''
-            }
+           // {
+              //label: 'WizFi630',
+              //to: ''
+           // }
           ]
         },
         {to: 'blog', label: 'Blog', position: 'left'},
@@ -98,6 +97,7 @@ module.exports = {
       copyright: `Copyright © ${new Date().getFullYear()} WIZnet Co., Ltd. All Rights Reserved.`,
     },
   },
+  plugins: ['./sitePlugin'],
   presets: [
     [
       '@docusaurus/preset-classic',

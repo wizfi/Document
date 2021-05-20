@@ -17,7 +17,7 @@ This document uses Arduino Mega2560 and WizFi360-EVB-Shield. To communicate with
 
 You can also use D0 ~ D8 Pin as TXD / RXD Pin by using UART Select Pin header. If you use it, you can connect without Wiring by placing WizFi360-EVB-Shield on Arduino. 
 
-![](/Document/img/basic_guides/http_client/http_client.png)
+![](/img/basic_guides/http_client/http_client.png)
 
 ## Library download
 
@@ -29,7 +29,7 @@ Download the library from [Github](https://github.com/wizfi/WizFi360EVB-Arduino)
 
 Launch Arduino and Open the WebClientRepeating example as shown below.
 
-![](/Document/img/basic_guides/http_client/http_client_arduino_ide.png)
+![](/img/basic_guides/http_client/http_client_arduino_ide.png)
 
 ### Code
 
@@ -37,14 +37,14 @@ Update your AP credentials (SSID and password) to connect WizFi360.
 Serial1 is the serial communicating with Arduino and WizFi360 and should have the same baud rate as WizFi360. The factory default baud rate for WizFi360 is 115200, and if you have not changed it, enter 115200.
 Enter the address of the HTTP server to connect to server. You can enter ip address or domain address. In this case, connect to arduino.cc.
 
-![](/Document/img/basic_guides/http_client/http_client_code.png)
+![](/img/basic_guides/http_client/http_client_code.png)
 
 In this guide, Arduino (WizFi360EVB) connects to Web Server and sends the following data. Request /ascillogo.txt using the GET method.
 
-![](/Document/img/basic_guides/http_client/http_client_execution.png)
+![](/img/basic_guides/http_client/http_client_execution.png)
 
 ### Result
 
 Receive the following data from the server.
 
-![](/Document/img/basic_guides/http_client/http_client_result.png)
+![](/img/basic_guides/http_client/http_client_result.png)

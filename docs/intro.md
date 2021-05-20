@@ -10,7 +10,7 @@ keywords:
 
 WizFi360-CON             |  WizFi360-PA
 :-------------------------:|:-------------------------:
-![WizFi360-CON](/Document/img/wizfi360-con.png) | ![WizFi360-PA](/Document/img/wizfi360-pa.png)
+![WizFi360-CON](/img/wizfi360-con.png) | ![WizFi360-PA](/img/wizfi360-pa.png)
 
 
 WizFi360 is a low cost and low-power consumption industrial-grade WiFi
@@ -67,7 +67,7 @@ be up to 2Mbps, which can meet requirements of various applications.
 
 [WizFi360-EVB-Mini](wizfi360_mini)|  [WizFi360-EVB-Shield](wizfi360_shield)
 :-------------------------:|:-------------------------:
-![WizFi360-CON](/Document/img/WizFi360-mini.png) | ![WizFi360-PA](/Document/img/img_evb_mini.png)
+![WizFi360-CON](/img/WizFi360-mini.png) | ![WizFi360-PA](/img/img_evb_mini.png)
 - NodeMCU Pin-Compatible | Arduino Pin-Compatible
 
 
@@ -76,5 +76,5 @@ be up to 2Mbps, which can meet requirements of various applications.
 
 [WizFi360io-H](wizfi360io)          |  [WizFi360io-C](wizfi360io)
 :-------------------------:|:-------------------------:
-![WizFi360-CON](/Document/img/img_evb_mini_2.png) | ![WizFi360-PA](/Document/img/img_evb_shield_2.png)
+![WizFi360-CON](/img/img_evb_mini_2.png) | ![WizFi360-PA](/img/img_evb_shield_2.png)
 Similar to XBee pinout|5V operation

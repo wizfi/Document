@@ -37,7 +37,7 @@ Azure IoT Hub 준비와 IoT 디바이스 등록 과정 대해 [Azure Cloud 소�
 
 WiFi모듈 테스트를 위해 [WizFi360-EVB-Shield] Evaluation 보드를 사용되었습니다.
 
-![](/Document/img/azure_cloud/mqtt_atcmd_wizfi360_required_item_1.png)
+![](/img/azure_cloud/mqtt_atcmd_wizfi360_required_item_1.png)
 
 ## 디바이스 준비
 
@@ -45,7 +45,7 @@ WiFi모듈 테스트를 위해 [WizFi360-EVB-Shield] Evaluation 보드를 사용
 
 이 문서에서는 Arduino Mega2560 과 WizFi360-EVB-Shield 를 사용합니다. Arduino Code 에서 UART1 을 사용하여 WizFi360-EVB-Shield 와 통신하기 위해, Arduino 의 TX1, RX1 Pin 과 WizFi360-EVB-Shield 의 RXD, TXD pin 을 연결합니다. WizFi360-EVB-Shield 에서 RXD/TXD Selector 를 OFF 로 변경하여 USB 가 아닌 Pin 을 통해 UART 통신을 하도록 합니다.
 
-![](/Document/img/azure_cloud/Arduino_Azure_atcmd_wizfi360_connection_new.png)
+![](/img/azure_cloud/Arduino_Azure_atcmd_wizfi360_connection_new.png)
 
 WizFi360-EVB-Shield에 있는 DHT11 센서 사용을 위해 Arduino Mega D14 pin과 EVB D14 pin 연결해야 됩니다.
 
@@ -53,7 +53,7 @@ WizFi360-EVB-Shield에 있는 DHT11 센서 사용을 위해 Arduino Mega D14 pin
 하드웨어 설정 후 USB 커넥터를 이용하여 Arduino Mega2560 Rev3 보드와 PC를 연결합니다. PC 운영체제 장치 관리자에서 장치와 연결된 COM 포트를 확인할 수 있습니다.
 
 
-![](/Document/img/azure_cloud/Arduino_Azure_atcmd_device_manager_port.png)
+![](/img/azure_cloud/Arduino_Azure_atcmd_device_manager_port.png)
 
 > Arduino IDE를 정상적으로 설치하면, 위와 같이 장치 관리자에서 COM 포트를 확인할 수 있습니다.
 
@@ -229,17 +229,17 @@ char DevicePrimaryKey[] = "XXXXXXXXXXXXXXXXXX";
 
 다음 그림과 같이 Arduino Mega2560 보드와 포트를 선택하고, 컴파일을 수행합니다.
 
-![](/Document/img/azure_cloud/Arduino_Azure_atcmd_ide_port_check.png)
+![](/img/azure_cloud/Arduino_Azure_atcmd_ide_port_check.png)
 
-![](/Document/img/azure_cloud/Arduino_Azure_atcmd_ide_board_check.png)
+![](/img/azure_cloud/Arduino_Azure_atcmd_ide_board_check.png)
 
 컴파일이 완료 되면 다음과 같이 업로드를 수행하여 최종적으로 보드에 업로드를 수행 합니다. 업로드가 정상적으로 완료되면 'avrdude done. Thank you.' 메시지를 확인 할 수 있습니다. 
 
-![](/Document/img/azure_cloud/Arduino_Azure_atcmd_ide_upload.png)
+![](/img/azure_cloud/Arduino_Azure_atcmd_ide_upload.png)
 
 업로드를 완료한 후, 시리얼 모니터를 이용하여 정상적으로 Arduino Mega2560 보드에 업로드 되었는지 확인할 수 있습니다.
 
-![](/Document/img/azure_cloud/Arduino_Azure_atcmd_serial_monitor_results.JPG)
+![](/img/azure_cloud/Arduino_Azure_atcmd_serial_monitor_results.JPG)
 
 
 ### 동작 예제 결과
@@ -248,7 +248,7 @@ char DevicePrimaryKey[] = "XXXXXXXXXXXXXXXXXX";
 > MQTTPUB 명령을 통해 메시지를 보내기 전에 "Start" 버튼을 눌러야 합니다.
 2. MQTTPUB command으로 수신한 데이터를 확인 할 수 있습니다.
 
-![](/Document/img/azure_cloud/Arduino_Azure_atcmd_IoT_Explorer_results.JPG)
+![](/img/azure_cloud/Arduino_Azure_atcmd_IoT_Explorer_results.JPG)
 
 ## 다음 단계
 

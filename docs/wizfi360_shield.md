@@ -7,7 +7,7 @@ keywords:
     - WizFi360-EVB-Shield
 ---
 
-![WizFi360-EVB-Shield](/Document/img/wizfi360-evb.jpg)
+![WizFi360-EVB-Shield](/img/wizfi360-evb.jpg)
 
 ## Overview
 

@@ -37,7 +37,7 @@ Azure IoT Hub 준비와 IoT 디바이스 등록 과정 대해 [Azure Cloud 소�
 
 WiFi모듈 테스트를 위해 [WizFi360-EVB-Shield] Evaluation 보드를 사용되었습니다.
 
-![](/Document/img/azure_cloud/mqtt_atcmd_wizfi360_required_item_1.png)
+![](/img/azure_cloud/mqtt_atcmd_wizfi360_required_item_1.png)
 
 ## 디바이스 준비
 
@@ -51,7 +51,7 @@ WizFi360-EVB-Shield는 NUCLEO-L476RG와 결합을 하여 사용되어 집니다.
 > * D2 : UART Tx
 > * D8 : UART Rx
 
-![](/Document/img/azure_cloud/mqtt_atcmd_wizfi360_required_item_2.png)
+![](/img/azure_cloud/mqtt_atcmd_wizfi360_required_item_2.png)
 
 
 
@@ -224,7 +224,7 @@ Syntax:
 
 Online Compiler 경우 다음 링크에서 Compiler에 import을 할 수 있습니다.
 > https://os.mbed.com/users/vikshin/code/Mbed-Azure-Atcmd-WizFi360/
-![](/Document/img/azure_cloud/Mbed_Azure_online_compiler.JPG)
+![](/img/azure_cloud/Mbed_Azure_online_compiler.JPG)
 
 ### Modify parameters
 
@@ -246,7 +246,7 @@ char device_primary_key[] = "XXXXXXXXXXXXXXXXXXXXXXXXXX=";
 ![][Link-Execute_Project_Through_Mbed_Studio_3]
 
 업로드를 완료한 후, 시리얼 모니터를 이용하여 정상적으로 Nucleo 보드에 업로드 되었는지 확인할 수 있습니다.
-![](/Document/img/azure_cloud/Mbed_Azure_atcmd_serial_monitor.JPG)
+![](/img/azure_cloud/Mbed_Azure_atcmd_serial_monitor.JPG)
 
 
 ### 동작 예제 결과
@@ -255,7 +255,7 @@ char device_primary_key[] = "XXXXXXXXXXXXXXXXXXXXXXXXXX=";
 > MQTTPUB 명령을 통해 메시지를 보내기 전에 "Start" 버튼을 눌러야 합니다.
 2. MQTTPUB command으로 수신한 데이터를 확인 할 수 있습니다.
 
-![](/Document/img/azure_cloud/Mbed_Azure_atcmd_iot_explorer.JPG)
+![](/img/azure_cloud/Mbed_Azure_atcmd_iot_explorer.JPG)
 
 ## 더 보기
 

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Link from '@docusaurus/Link';
-import classnames from 'classnames';
+import classnames from 'clsx';
 import {MDXProvider} from '@mdx-js/react';
 
 import MDXComponents from '@theme/MDXComponents';

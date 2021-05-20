@@ -28,7 +28,7 @@ keywords:
 - [**Create a policy**][Link-create-policy]
 :::important
  Save certificates and key during creation.
-![](/Document/img/aws_cloud/sdk-attach-policy.png)
+![](/img/aws_cloud/sdk-attach-policy.png)
 AWS root CA can be downloaded from [**here**][link-aws-ca]
 :::
 
@@ -47,7 +47,7 @@ Process consists of following steps:
 
 For this guide we used evaluation board [WizFi360-EVB-Shield]
 
-![](/Document/img/azure_cloud/mqtt_atcmd_wizfi360_required_item_1.png)
+![](/img/azure_cloud/mqtt_atcmd_wizfi360_required_item_1.png)
 
 ## Device preparation
 
@@ -56,13 +56,13 @@ For this guide we used evaluation board [WizFi360-EVB-Shield]
 We are going to use WizFi360-EVB-Shield in standalone mode. MicroUSB cable will be used to connect through UART.
 Switch SW1 into ON position and connect MicroUSB.
 
-![](/Document/img/azure_cloud/WizFi360EVB_SW1.JPG)
+![](/img/azure_cloud/WizFi360EVB_SW1.JPG)
 
 ### Device connection
 
 Please check COM port number in Device Manager.
 
-![](/Document/img/azure_cloud/DeviceManager.JPG)
+![](/img/azure_cloud/DeviceManager.JPG)
 
 :::tip
 If COM port cannot be found in Device Manager, please install drivers below.
@@ -186,7 +186,7 @@ AT+CLICASEND=1
 When saving certificate or private key, all lines shall be sent one by one from "Begin certificate" line till "End certificate" line.
 
 Please refer to below image.
-![](/Document/img/aws_cloud/terminal_ca_send.gif)
+![](/img/aws_cloud/terminal_ca_send.gif)
 
 
 ### Connection to AWS
@@ -215,20 +215,20 @@ Go to AWS IoT -> Manage -> Things -> **Your thing** -> Interact menu.<br />
 Check screenshot below.
 :::
 
-![](/Document/img/aws_cloud/aws_shadow_interact.PNG)
+![](/img/aws_cloud/aws_shadow_interact.PNG)
 </details>
 
 <br />
 Below is screenshot from terminal
 
-![](/Document/img/aws_cloud/token2shell.PNG)
+![](/img/aws_cloud/token2shell.PNG)
 
 ## Results
 
 1. Results can be checked in AWS -> AWS IoT -> Manage -> Things -> Shadow.
 2. Since we subscribed to "updated" topic, when MQTT message is sent we can see reply message instantly.
 
-![](/Document/img/aws_cloud/aws_shadow.PNG)
+![](/img/aws_cloud/aws_shadow.PNG)
 
 
 **Congratulations**

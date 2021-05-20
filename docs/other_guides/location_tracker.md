@@ -27,7 +27,7 @@ keywords:
 This guide was inspired by post on [https://www.instructables.com].
 
 Using unwiredlabs geolocation API it is possible to get location coordinates without GPS and even display.
-![WizFi360](/Document/img/other_guides/location_tracker/mqtt_atcmd_wizfi360_required_item_1.png)
+![WizFi360](/img/other_guides/location_tracker/mqtt_atcmd_wizfi360_required_item_1.png)
 
 ## 디바이스 준비
 
@@ -35,12 +35,12 @@ Using unwiredlabs geolocation API it is possible to get location coordinates wit
 
 이 문서에서는 Arduino Mega2560 과 WizFi360-EVB-Shield 를 사용합니다. Arduino Code 에서 UART1 을 사용하여 WizFi360-EVB-Shield 와 통신하기 위해, Arduino 의 TX1, RX1 Pin 과 WizFi360-EVB-Shield 의 RXD, TXD pin 을 연결합니다. WizFi360-EVB-Shield 에서 RXD/TXD Selector 를 OFF 로 변경하여 USB 가 아닌 Pin 을 통해 UART 통신을 하도록 합니다.
 
-![HW Setting](/Document/img/other_guides/location_tracker/mega2560_wizfi360_connection.JPG)
+![HW Setting](/img/other_guides/location_tracker/mega2560_wizfi360_connection.JPG)
 
 ### 디바이스 연결
 하드웨어 설정 후 USB 커넥터를 이용하여 Arduino Mega2560 Rev3 보드와 PC를 연결합니다. PC 운영체제 장치 관리자에서 장치와 연결된 COM 포트를 확인할 수 있습니다.
 
-![Check port](/Document/img/other_guides/location_tracker/Arduino_Azure_atcmd_device_manager_port.png)
+![Check port](/img/other_guides/location_tracker/Arduino_Azure_atcmd_device_manager_port.png)
 
 > Arduino IDE를 정상적으로 설치하면, 위와 같이 장치 관리자에서 COM 포트를 확인할 수 있습니다.
 
@@ -80,12 +80,12 @@ String token = "XXXXXXXXXXXXXXXXXXXXXX";
 
 다음 그림과 같이 Arduino Mega2560 보드와 포트를 선택하고, 컴파일을 수행합니다.
 
-![Board check](/Document/img/other_guides/location_tracker/arduino_ide_screen.png)
+![Board check](/img/other_guides/location_tracker/arduino_ide_screen.png)
 
 
 컴파일이 완료 되면 다음과 같이 업로드를 수행하여 최종적으로 보드에 업로드를 수행 합니다. 업로드가 정상적으로 완료되면 'avrdude done. Thank you.' 메시지를 확인 할 수 있습니다.
 
-![Upload check](/Document/img/other_guides/location_tracker/compile_upload_complete.JPG)
+![Upload check](/img/other_guides/location_tracker/compile_upload_complete.JPG)
 
 업로드를 완료한 후, 시리얼 모니터를 이용하여 정상적으로 Arduino Mega2560 보드에 업로드 되었는지 확인할 수 있습니다.
 
@@ -96,12 +96,12 @@ String token = "XXXXXXXXXXXXXXXXXXXXXX";
 
 1. After uploading code to Arduino board results can be checked on serial monitor.
 
-![Result check](/Document/img/other_guides/location_tracker/serial_monitor_screenshot.JPG)
+![Result check](/img/other_guides/location_tracker/serial_monitor_screenshot.JPG)
 
 
 2. Google Maps can be used to verify location coordinates.
 
-![Google map check](/Document/img/other_guides/location_tracker/google_maps_screenshot.JPG)
+![Google map check](/img/other_guides/location_tracker/google_maps_screenshot.JPG)
 
 
 
