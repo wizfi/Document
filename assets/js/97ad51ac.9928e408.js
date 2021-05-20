@@ -1,0 +1,1 @@
+(self.webpackChunkwebsite=self.webpackChunkwebsite||[]).push([[3231],{6353:function(e){"use strict";e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"WizFi360 is Microsoft Azure Certified for IoT","permalink":"/Document/blog/2019/10/29/azure"}]}')}}]);
