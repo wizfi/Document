@@ -34,7 +34,7 @@ module.exports = {
           'basic_guides/throughput',
           'basic_guides/w600sdk',
           'basic_guides/airkiss',
-          'basic_guides/arduino_ide'
+         // 'basic_guides/arduino_ide'
         ]
       },
       {
