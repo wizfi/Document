@@ -31,10 +31,10 @@ Use following commands to connect to Wi-Fi AP.
 
 | AT Command | Terminal |
 |:--------|:--------|
-| AT<br /> AT+CWMODE_CUR=1<br />AT+CWDHCP_CUR=1,1<br />AT+CWLAP<br />AT+CWJAP_CUR=”ssid”,”password”<br />AT+CIPSTA_CUR? |![](/img/basic_guides/mqtt_client/fig3.png)|
+| AT<br /> AT+CWMODE_CUR=1<br />AT+CWDHCP_CUR=1,1<br />AT+CWLAP<br />AT+CWJAP_CUR="ssid","password"<br />AT+CIPSTA_CUR? |![](/img/basic_guides/mqtt_client/fig3.png)|
 
 ### MQTT Connect & Data Publish
 
 | AT Command | Terminal |
 |:--------|:--------|
-| AT+MQTTSET="USER_ID","PASSWORD","CLIENT_ID",60<br />AT+MQTTTOPIC="PUB_TOPIC","SUB_TOPIC"<br />AT+MQTTCON=0,"192.168.1.102",1883<br />AT+MQTTPUB=”0123456789” |![](/img/basic_guides/mqtt_client/fig4.png)|
+| AT+MQTTSET="USER_ID","PASSWORD","CLIENT_ID",60<br />AT+MQTTTOPIC="PUB_TOPIC","SUB_TOPIC"<br />AT+MQTTCON=0,"192.168.1.102",1883<br />AT+MQTTPUB="0123456789" |![](/img/basic_guides/mqtt_client/fig4.png)|
